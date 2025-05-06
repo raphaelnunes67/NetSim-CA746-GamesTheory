@@ -1,0 +1,642 @@
+ClearAll
+Clear
+
+!----------Circuit Input Bus--------
+
+New circuit.NETWORK_CA746
+
+~ basekv=13.8 Bus1=MT1 pu=1.015 Phases=3 MVAsc1=600e10 MVAsc3=600e10
+
+
+!---------- Commercial Loadshapes Week --------
+New LoadShape.COM-Type1-WE npts=1440 minterval=1 csvfile=../data/commercial_loadshapes/COM-Type1-WE.txt action = normalize
+New LoadShape.COM-Type2-WE npts=1440 minterval=1 csvfile=../data/commercial_loadshapes/COM-Type2-WE.txt action = normalize
+New LoadShape.COM-Type3-WE npts=1440 minterval=1 csvfile=../data/commercial_loadshapes/COM-Type3-WE.txt action = normalize
+New LoadShape.COM-Type4-WE npts=1440 minterval=1 csvfile=../data/commercial_loadshapes/COM-Type4-WE.txt action = normalize
+New LoadShape.COM-Type5-WE npts=1440 minterval=1 csvfile=../data/commercial_loadshapes/COM-Type5-WE.txt action = normalize
+New LoadShape.COM-Type6-WE npts=1440 minterval=1 csvfile=../data/commercial_loadshapes/COM-Type6-WE.txt action = normalize
+New LoadShape.COM-Type7-WE npts=1440 minterval=1 csvfile=../data/commercial_loadshapes/COM-Type7-WE.txt action = normalize
+New LoadShape.COM-Type8-WE npts=1440 minterval=1 csvfile=../data/commercial_loadshapes/COM-Type8-WE.txt action = normalize
+New LoadShape.COM-Type9-WE npts=1440 minterval=1 csvfile=../data/commercial_loadshapes/COM-Type9-WE.txt action = normalize
+New LoadShape.COM-Type10-WE npts=1440 minterval=1 csvfile=../data/commercial_loadshapes/COM-Type10-WE.txt action = normalize
+
+!---------- Commercial Loadshapes Saturday --------
+New LoadShape.COM-Type1-SA npts=1440 minterval=1 csvfile=../data/commercial_loadshapes/COM-Type1-SA.txt action = normalize
+New LoadShape.COM-Type2-SA npts=1440 minterval=1 csvfile=../data/commercial_loadshapes/COM-Type2-SA.txt action = normalize
+New LoadShape.COM-Type3-SA npts=1440 minterval=1 csvfile=../data/commercial_loadshapes/COM-Type3-SA.txt action = normalize
+New LoadShape.COM-Type4-SA npts=1440 minterval=1 csvfile=../data/commercial_loadshapes/COM-Type4-SA.txt action = normalize
+New LoadShape.COM-Type5-SA npts=1440 minterval=1 csvfile=../data/commercial_loadshapes/COM-Type5-SA.txt action = normalize
+New LoadShape.COM-Type6-SA npts=1440 minterval=1 csvfile=../data/commercial_loadshapes/COM-Type6-SA.txt action = normalize
+New LoadShape.COM-Type7-SA npts=1440 minterval=1 csvfile=../data/commercial_loadshapes/COM-Type7-SA.txt action = normalize
+New LoadShape.COM-Type8-SA npts=1440 minterval=1 csvfile=../data/commercial_loadshapes/COM-Type8-SA.txt action = normalize
+New LoadShape.COM-Type9-SA npts=1440 minterval=1 csvfile=../data/commercial_loadshapes/COM-Type9-SA.txt action = normalize
+New LoadShape.COM-Type10-SA npts=1440 minterval=1 csvfile=../data/commercial_loadshapes/COM-Type10-SA.txt action = normalize
+
+!---------- Commercial Loadshapes Sunday --------
+New LoadShape.COM-Type1-SU npts=1440 minterval=1 csvfile=../data/commercial_loadshapes/COM-Type1-SU.txt action = normalize
+New LoadShape.COM-Type2-SU npts=1440 minterval=1 csvfile=../data/commercial_loadshapes/COM-Type2-SU.txt action = normalize
+New LoadShape.COM-Type3-SU npts=1440 minterval=1 csvfile=../data/commercial_loadshapes/COM-Type3-SU.txt action = normalize
+New LoadShape.COM-Type4-SU npts=1440 minterval=1 csvfile=../data/commercial_loadshapes/COM-Type4-SU.txt action = normalize
+New LoadShape.COM-Type5-SU npts=1440 minterval=1 csvfile=../data/commercial_loadshapes/COM-Type5-SU.txt action = normalize
+New LoadShape.COM-Type6-SU npts=1440 minterval=1 csvfile=../data/commercial_loadshapes/COM-Type6-SU.txt action = normalize
+New LoadShape.COM-Type7-SU npts=1440 minterval=1 csvfile=../data/commercial_loadshapes/COM-Type7-SU.txt action = normalize
+New LoadShape.COM-Type8-SU npts=1440 minterval=1 csvfile=../data/commercial_loadshapes/COM-Type8-SU.txt action = normalize
+New LoadShape.COM-Type9-SU npts=1440 minterval=1 csvfile=../data/commercial_loadshapes/COM-Type9-SU.txt action = normalize
+New LoadShape.COM-Type10-SU npts=1440 minterval=1 csvfile=../data/commercial_loadshapes/COM-Type10-SU.txt action = normalize
+
+!---------- Residential Loadshapes Week --------
+New LoadShape.RES-Type1-WE npts=1440 minterval=1 csvfile=../data/residential_loadshapes/RES-Type1-WE.txt action = normalize
+New LoadShape.RES-Type2-WE npts=1440 minterval=1 csvfile=../data/residential_loadshapes/RES-Type2-WE.txt action = normalize
+New LoadShape.RES-Type3-WE npts=1440 minterval=1 csvfile=../data/residential_loadshapes/RES-Type3-WE.txt action = normalize
+New LoadShape.RES-Type4-WE npts=1440 minterval=1 csvfile=../data/residential_loadshapes/RES-Type4-WE.txt action = normalize
+New LoadShape.RES-Type5-WE npts=1440 minterval=1 csvfile=../data/residential_loadshapes/RES-Type5-WE.txt action = normalize
+New LoadShape.RES-Type6-WE npts=1440 minterval=1 csvfile=../data/residential_loadshapes/RES-Type6-WE.txt action = normalize
+New LoadShape.RES-Type7-WE npts=1440 minterval=1 csvfile=../data/residential_loadshapes/RES-Type7-WE.txt action = normalize
+New LoadShape.RES-Type8-WE npts=1440 minterval=1 csvfile=../data/residential_loadshapes/RES-Type8-WE.txt action = normalize
+New LoadShape.RES-Type9-WE npts=1440 minterval=1 csvfile=../data/residential_loadshapes/RES-Type9-WE.txt action = normalize
+New LoadShape.RES-Type10-WE npts=1440 minterval=1 csvfile=../data/residential_loadshapes/RES-Type10-WE.txt action = normalize
+
+!---------- Residential Loadshapes Saturday --------
+
+New LoadShape.RES-Type1-SA npts=1440 minterval=1 csvfile=../data/residential_loadshapes/RES-Type1-SA.txt action = normalize
+New LoadShape.RES-Type2-SA npts=1440 minterval=1 csvfile=../data/residential_loadshapes/RES-Type2-SA.txt action = normalize
+New LoadShape.RES-Type3-SA npts=1440 minterval=1 csvfile=../data/residential_loadshapes/RES-Type3-SA.txt action = normalize
+New LoadShape.RES-Type4-SA npts=1440 minterval=1 csvfile=../data/residential_loadshapes/RES-Type4-SA.txt action = normalize
+New LoadShape.RES-Type5-SA npts=1440 minterval=1 csvfile=../data/residential_loadshapes/RES-Type5-SA.txt action = normalize
+New LoadShape.RES-Type6-SA npts=1440 minterval=1 csvfile=../data/residential_loadshapes/RES-Type6-SA.txt action = normalize
+New LoadShape.RES-Type7-SA npts=1440 minterval=1 csvfile=../data/residential_loadshapes/RES-Type7-SA.txt action = normalize
+New LoadShape.RES-Type8-SA npts=1440 minterval=1 csvfile=../data/residential_loadshapes/RES-Type8-SA.txt action = normalize
+New LoadShape.RES-Type9-SA npts=1440 minterval=1 csvfile=../data/residential_loadshapes/RES-Type9-SA.txt action = normalize
+New LoadShape.RES-Type10-SA npts=1440 minterval=1 csvfile=../data/residential_loadshapes/RES-Type10-SA.txt action = normalize
+
+!---------- Residential Loadshapes Sunday --------
+
+New LoadShape.RES-Type1-SU npts=1440 minterval=1 csvfile=../data/residential_loadshapes/RES-Type1-SU.txt action = normalize
+New LoadShape.RES-Type2-SU npts=1440 minterval=1 csvfile=../data/residential_loadshapes/RES-Type2-SU.txt action = normalize
+New LoadShape.RES-Type3-SU npts=1440 minterval=1 csvfile=../data/residential_loadshapes/RES-Type3-SU.txt action = normalize
+New LoadShape.RES-Type4-SU npts=1440 minterval=1 csvfile=../data/residential_loadshapes/RES-Type4-SU.txt action = normalize
+New LoadShape.RES-Type5-SU npts=1440 minterval=1 csvfile=../data/residential_loadshapes/RES-Type5-SU.txt action = normalize
+New LoadShape.RES-Type6-SU npts=1440 minterval=1 csvfile=../data/residential_loadshapes/RES-Type6-SU.txt action = normalize
+New LoadShape.RES-Type7-SU npts=1440 minterval=1 csvfile=../data/residential_loadshapes/RES-Type7-SU.txt action = normalize
+New LoadShape.RES-Type8-SU npts=1440 minterval=1 csvfile=../data/residential_loadshapes/RES-Type8-SU.txt action = normalize
+New LoadShape.RES-Type9-SU npts=1440 minterval=1 csvfile=../data/residential_loadshapes/RES-Type9-SU.txt action = normalize
+New LoadShape.RES-Type10-SU npts=1440 minterval=1 csvfile=../data/residential_loadshapes/RES-Type10-SU.txt action = normalize
+
+!------------------ Public Lighting Loadshape -----------------
+New LoadShape.IP10000 npts=24.000000 interval=1.000000
+~ mult = ( 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000)
+
+!-------------------- Voltvar Curve PV --------------------------------
+New Xycurve.vv_curve_pv npts=7
+~ Yarray=(1.0, 1.0, 0.0, 0.0, -1.0, -1.0, -1.0)
+~ Xarray=(0.0, 0.8747, 0.9304,  1.0, 1.0367, 1.0522,  2.0) ! 1%
+
+!~ Xarray=(0.0, 0.8661, 0.9212,  1.0, 1.0472, 1.0629, 2.0)
+! voltage values: (0.0, 110.0, 117.0, 127.0, 133.0, 135.0, 254.0)
+
+!-------------------- Voltvar Curve EV --------------------------------
+New Xycurve.vv_curve_ev npts=7
+~ Yarray=(0.8, 0.8, 0.0, 0.0, -1.0, -1.0, -1.0)
+~ Xarray=(0.0, 0.8747, 0.9304,  1.0, 1.0367, 1.0522,  2.0) ! 1%
+
+!~ Xarray=(0.0, 0.8661, 0.9212,  1.0, 1.0472, 1.0629, 2.0)
+! voltage values: (0.0, 110.0, 117.0, 127.0, 133.0, 135.0, 254.0)
+
+
+!-------------------- Voltwatt Curve PV Systems --------------------------------
+
+New XyCurve.vw_curve_pv npts=4
+~ Yarray=(1.0, 1.0, 0.0, 0.0)
+~ Xarray=(0.0, 1.0367, 1.0522, 2.0) ! 99%
+
+! ~ Xarray=(0.0, 1.0472, 1.0629, 2.0)
+! voltage values: (0.0, 133.0, 135.0, 254.0)
+
+
+!-------------------- Voltwatt Curve EVs --------------------------------
+
+New XyCurve.vw_curve_ev npts=4
+~ Yarray=(0.0, 0.0, 1.0, 1.0)
+~ Xarray=(0.0, 0.8747, 0.9304, 1.0) ! 101%
+
+! ~ Xarray=(0.0, 0.8661, 0.9212, 1.0)
+! voltage values: (0.0, 110.0, 117.0, 127.0)
+
+
+!------------------Shape PV generator temperature and efficiency shapes -----------------
+
+New XYcurve.MyPvsT npts=4 xarray=[0 25 75 100] yarray=[1.2 1 0.8 0.6]
+New XYcurve.MyEff npts=4 xarray=[0.1 0.2 0.4 1] yarray=[0.86 0.9 0.93 0.97]
+New Tshape.MyTemp npts=24 interval=1 temp=[25, 25, 25, 25, 25, 25, 25, 25, 35, 40, 45, 50  60 60  55 40  35  30  25 25 25 25 25 25]
+New Loadshape.MyIrrad npts=24 interval=1 mult=[0 0 0 0 0 0 .1 .2 .3  .5  .8  .9  1.0  1.0  .99  .9  .7  .4  .1 0  0  0  0  0]
+
+
+!------------------Shape PV generator and residential loads -----------------
+
+New LoadShape.pv_shape_rainy npts=1440 minterval=1 csvfile=../data/irradiation_curves/pv_rainy.txt
+New LoadShape.pv_shape_cloudy npts=1440 minterval=1 csvfile=../data/irradiation_curves/pv_cloudy.txt
+New LoadShape.pv_shape_varied npts=1440 minterval=1 csvfile=../data/irradiation_curves/pv_varied.txt
+New Loadshape.pv_shape_sunny npts=1440 minterval=1 csvfile=../data/irradiation_curves/pv_sunny.txt
+
+
+!------------ Wire Data --------------
+
+new Wiredata.1000000 Runits=km Rac=0.306 GMRunits=m GMRac=0.0055    Radunits=m Diam=0.01431 Emergamps=365 !4/0
+new Wiredata.1000001 Runits=km Rac=0.975 GMRunits=m GMRac=0.00308   Radunits=m Diam=0.00801 Emergamps=175 !2
+new Wiredata.1000002 Runits=km Rac=1.551 GMRunits=m GMRac=0.00244   Radunits=m Diam=0.00636 Emergamps=130 !4
+new Wiredata.1000003 Runits=km Rac=0.732 GMRunits=m GMRac=0.01395   Radunits=m Diam=0.0279  Emergamps=80   !50mm2
+new Wiredata.1000004 Runits=km Rac=0.613 GMRunits=m GMRac=0.00388   Radunits=m Diam=0.01011 Emergamps=240   !1/0
+new Wiredata.1000005 Runits=km Rac=1.442 GMRunits=m GMRac=0.002334  Radunits=m Diam=0.0060  Emergamps=51  !25mm2 Fase
+new Wiredata.1000006 Runits=km Rac=1.442 GMRunits=m GMRac=0.0024118 Radunits=m Diam=0.0062  Emergamps=51  !25mm2 Neutro
+
+! Conductors
+
+new Wiredata.1000007 Runits=km Rac=0.3165 GMRunits=m GMRac=0.00481    Radunits=m Diam=0.01326 Emergamps=328 !4/0 OXLIP NEXANS
+new Wiredata.1000008 Runits=km Rac=0.6375 GMRunits=m GMRac=0.00339    Radunits=m Diam=0.00936 Emergamps=210 !1/0 POPPY NEXANS
+new Wiredata.1000009 Runits=km Rac=1.0145 GMRunits=m GMRac=0.00269    Radunits=m Diam=0.00741 Emergamps=155 !2   IRIS  NEXANS
+new Wiredata.1000010 Runits=km Rac=1.6119 GMRunits=m GMRac=0.00588    Radunits=m Diam=0.00588 Emergamps=116 !4   ROSE  NEXANS
+
+! Isolated Contuctors
+
+new wiredata.1000011 Runits=km Rdc=0.3424 GMRunits=m Radunits=m Diam=0.01680 Emergamps=268 !120mm2 PE fase  NEXANS/Equatorial Pará
+new wiredata.1000012 Runits=km Rdc=0.5787 GMRunits=m Radunits=m Diam=0.01335 Emergamps=190 !70mm2  PE fase  NEXANS/Equatorial Pará
+new wiredata.1000013 Runits=km Rdc=0.8327 GMRunits=m Radunits=m Diam=0.01140 Emergamps=152 !50mm2  PE fase  NEXANS/Equatorial Pará
+new wiredata.1000014 Runits=km Rdc=1.1201 GMRunits=m Radunits=m Diam=0.01020 Emergamps=126 !35mm2  PE fase  NEXANS/Equatorial Pará
+new wiredata.1000015 Runits=km Rdc=1.5390 GMRunits=m Radunits=m Diam=0.00880 Emergamps=104 !25mm2  PE fase  NEXANS/Equatorial Pará
+
+!------Conductors Geometry settings------
+
+new linegeometry.1-C17130402-ABCN nconds=4.000000 nphases=3.000000
+~ cond=1.000000 wire=1000000 units=m x=0 h=8.8
+~ cond=2.000000 wire=1000000 units=m x=0 h=8.6
+~ cond=3.000000 wire=1000000 units=m x=0 h=8.4
+~ cond=4.000000 wire=1000001 units=m x=0 h=9
+!Reduce=Yes
+
+new linegeometry.1-C17130410-ABCN nconds=4.000000 nphases=3.000000
+~ cond=1.000000 wire=1000000 units=m x=0 h=8.8
+~ cond=2.000000 wire=1000000 units=m x=0 h=8.6
+~ cond=3.000000 wire=1000000 units=m x=0 h=8.4
+~ cond=4.000000 wire=1000004 units=m x=0 h=9
+!Reduce=Yes
+
+new linegeometry.2-C17130402-ABCN nconds=4.000000 nphases=3.000000
+~ cond=1.000000 wire=1000001 units=m x=0 h=8.8
+~ cond=2.000000 wire=1000001 units=m x=0 h=8.6
+~ cond=3.000000 wire=1000001 units=m x=0 h=8.4
+~ cond=4.000000 wire=1000002 units=m x=0 h=9
+!Reduce=Yes
+
+new linegeometry.1-C17130401-ABCN nconds=4.000000 nphases=3.000000
+~ cond=1.000000 wire=1000000 units=m x=0 h=8.8
+~ cond=2.000000 wire=1000000 units=m x=0 h=8.6
+~ cond=3.000000 wire=1000000 units=m x=0 h=8.4
+~ cond=4.000000 wire=1000001 units=m x=0 h=9
+!Reduce=Yes
+
+new linegeometry.RAMAL nconds=4.000000 nphases=3.000000
+~ cond=1.000000 wire=1000003 units=m x=0 h=5.8
+~ cond=2.000000 wire=1000003 units=m x=0 h=5.6
+~ cond=3.000000 wire=1000003 units=m x=0 h=5.4
+~ cond=4.000000 wire=1000003 units=m x=0 h=6
+Reduce=Yes
+
+new linegeometry.RAMAL2 nconds=4.000000 nphases=3.000000
+~ cond=1.000000 wire=1000005 units=m x=0 h=6.00
+~ cond=2.000000 wire=1000005 units=m x=0 h=6.01
+~ cond=3.000000 wire=1000005 units=m x=0 h=6.02
+~ cond=4.000000 wire=1000006 units=m x=0 h=6.03
+Reduce=Yes
+
+
+!------Conductors Geometry settings------
+
+
+new linegeometry.OXLIP nconds=4.000000 nphases=3.000000
+~ cond=1.000000 wire=1000007 units=m x=0 h=6.5
+~ cond=2.000000 wire=1000007 units=m x=0 h=6.7
+~ cond=3.000000 wire=1000007 units=m x=0 h=6.9
+~ cond=4.000000 wire=1000007 units=m x=0 h=7.1
+!Reduce=Yes
+
+new linegeometry.POPPY nconds=4.000000 nphases=3.000000
+~ cond=1.000000 wire=1000008 units=m x=0 h=6.5
+~ cond=2.000000 wire=1000008 units=m x=0 h=6.7
+~ cond=3.000000 wire=1000008 units=m x=0 h=6.9
+~ cond=4.000000 wire=1000008 units=m x=0 h=7.1
+!Reduce=Yes
+
+new linegeometry.IRIS nconds=4.000000 nphases=3.000000
+~ cond=1.000000 wire=1000009 units=m x=0 h=6.5
+~ cond=2.000000 wire=1000009 units=m x=0 h=6.7
+~ cond=3.000000 wire=1000009 units=m x=0 h=6.9
+~ cond=4.000000 wire=1000009 units=m x=0 h=7.1
+!Reduce=Yes
+
+new linegeometry.ROSE nconds=4.000000 nphases=3.000000
+~ cond=1.000000 wire=1000010 units=m x=0 h=6.5
+~ cond=2.000000 wire=1000010 units=m x=0 h=6.7
+~ cond=3.000000 wire=1000010 units=m x=0 h=6.9
+~ cond=4.000000 wire=1000010 units=m x=0 h=7.1
+!Reduce=Yes
+
+
+!------ Isolated Conductors Geometry ---------
+
+new linegeometry.QUAD-120 nconds=4.000000 nphases=3.000000
+~ cond=1.000000 wire=1000011 units=m x=0 h=6.00
+~ cond=2.000000 wire=1000011 units=m x=0 h=6.05
+~ cond=3.000000 wire=1000011 units=m x=0 h=6.10
+~ cond=4.000000 wire=1000012 units=m x=0 h=6.15
+Reduce=Yes
+
+new linegeometry.QUAD-70 nconds=4.000000 nphases=3.000000
+~ cond=1.000000 wire=1000012 units=m x=0 h=6.00
+~ cond=2.000000 wire=1000012 units=m x=0 h=6.05
+~ cond=3.000000 wire=1000012 units=m x=0 h=6.10
+~ cond=4.000000 wire=1000012 units=m x=0 h=6.15
+Reduce=Yes
+
+new linegeometry.QUAD-50 nconds=4.000000 nphases=3.000000
+~ cond=1.000000 wire=1000013 units=m x=0 h=6.00
+~ cond=2.000000 wire=1000013 units=m x=0 h=6.05
+~ cond=3.000000 wire=1000013 units=m x=0 h=6.10
+~ cond=4.000000 wire=1000013 units=m x=0 h=6.15
+Reduce=Yes
+
+new linegeometry.QUAD-35 nconds=4.000000 nphases=3.000000
+~ cond=1.000000 wire=1000014 units=m x=0 h=6.00
+~ cond=2.000000 wire=1000014 units=m x=0 h=6.05
+~ cond=3.000000 wire=1000014 units=m x=0 h=6.10
+~ cond=4.000000 wire=1000014 units=m x=0 h=6.15
+Reduce=Yes
+
+new linegeometry.QUAD-25 nconds=4.000000 nphases=3.000000
+~ cond=1.000000 wire=1000015 units=m x=0 h=6.00
+~ cond=2.000000 wire=1000015 units=m x=0 h=6.05
+~ cond=3.000000 wire=1000015 units=m x=0 h=6.10
+~ cond=4.000000 wire=1000015 units=m x=0 h=6.15
+Reduce=Yes
+
+
+!-----------------------------------------------------PV EV Line Code---------------------------------------------------
+
+New Linecode.PvEvLine nphases=3 R1=0.001 X1=0.001 R0=0.001 X0=0.001 C1=0.00 C0=0.00 units=km
+
+!-----------------------------------------------------Lines-------------------------------------------------------------
+
+new line.1743000 Geometry=QUAD-120 Length=0.0280886 Units=km Bus1=C17130410 Bus2=C17130412
+
+new line.1743001 Geometry=QUAD-120 Length=0.0251075 Units=km Bus1=C17130412 Bus2=C17130414
+
+new line.1743002 Geometry=QUAD-120 Length=0.0304473 Units=km Bus1=C17130410 Bus2=C17130411
+
+new line.1743003 Geometry=QUAD-120 Length=0.0309757 Units=km Bus1=C17130411 Bus2=C17130413
+
+new line.1743004 Geometry=QUAD-120 Length=0.0307074 Units=km Bus1=C17130413 Bus2=C17130409
+
+new line.1743005 Geometry=QUAD-70 Length=0.0306332 Units=km Bus1=C17130409 Bus2=C17130408
+
+new line.1743006 Geometry=QUAD-70 Length=0.0284971 Units=km Bus1=C17130408 Bus2=C17130407
+
+new line.1743007 Geometry=QUAD-70 Length=0.0230639 Units=km Bus1=C17130407 Bus2=C29405754
+
+new line.1743008 Geometry=QUAD-70 Length=0.0282982 Units=km Bus1=C17130407 Bus2=C17130405
+
+new line.1743009 Geometry=QUAD-70 Length=0.0293106 Units=km Bus1=C17130405 Bus2=C17130404
+
+new line.1743010 Geometry=QUAD-70 Length=0.0300080 Units=km Bus1=C17130404 Bus2=C17130403
+
+new line.1743011 Geometry=QUAD-70 Length=0.0253710 Units=km Bus1=C17130410 Bus2=C00644008
+
+
+new line.1743012 Geometry=QUAD-70 Length=0.0242970 Units=km Bus1=C00644008 Bus2=C00644007
+
+new line.1743013 Geometry=QUAD-70 Length=0.0250950 Units=km Bus1=C00644007 Bus2=C00590095
+
+new line.1743014 Geometry=QUAD-70 Length=0.0309424 Units=km Bus1=C00644008 Bus2=C00644009
+
+new line.1743015 Geometry=QUAD-70 Length=0.0304030 Units=km Bus1=C00644009 Bus2=C00644010
+
+new line.1743016 Geometry=QUAD-70 Length=0.0301085 Units=km Bus1=C00644010 Bus2=C00644011
+
+new line.1743017 Geometry=QUAD-70 Length=0.0309876 Units=km Bus1=C00644011 Bus2=C00644013
+
+new line.1743018 Geometry=QUAD-70 Length=0.0279342 Units=km Bus1=C00644013 Bus2=C00644014
+
+new line.1743019 Geometry=QUAD-70 Length=0.0250677 Units=km Bus1=C00644014 Bus2=C00644015
+
+new line.1743020 Geometry=QUAD-70 Length=0.0226456 Units=km Bus1=C00644013 Bus2=C00644012
+
+new line.1743021 Geometry=QUAD-70 Length=0.0212366 Units=km Bus1=C00644012 Bus2=C17130648
+
+new line.1743022 Geometry=RAMAL2 Length=0.00770 Units=km Bus1=C29405754 Bus2=CA746GR
+
+new line.1743023 Geometry=RAMAL2 Length=0.01572 Units=km Bus1=C17130410 Bus2=CA746RES1
+
+new line.1743024 Geometry=RAMAL2 Length=0.01196 Units=km Bus1=C17130410 Bus2=CA746RES2
+
+new line.1743025 Geometry=RAMAL2 Length=0.01259 Units=km Bus1=C17130412 Bus2=CA746RES3
+
+new line.1743026 Geometry=RAMAL2 Length=0.01489 Units=km Bus1=C17130412 Bus2=CA746RES4
+
+new line.1743027 Geometry=RAMAL2 Length=0.01232 Units=km Bus1=C17130414 Bus2=CA746RES5
+
+new line.1743028 Geometry=RAMAL2 Length=0.01162 Units=km Bus1=C17130414 Bus2=CA746RES6
+
+new line.1743029 Geometry=RAMAL2 Length=0.01458 Units=km Bus1=C17130411 Bus2=CA746RES7
+
+new line.1743030 Geometry=RAMAL2 Length=0.01189 Units=km Bus1=C17130411 Bus2=CA746RES8
+
+new line.1743031 Geometry=RAMAL2 Length=0.01549 Units=km Bus1=C17130413 Bus2=CA746RES9
+
+new line.1743032 Geometry=RAMAL2 Length=0.01268 Units=km Bus1=C17130413 Bus2=CA746RES10
+
+new line.1743033 Geometry=RAMAL2 Length=0.01248 Units=km Bus1=C17130409 Bus2=CA746RES11
+
+new line.1743034 Geometry=RAMAL2 Length=0.01542 Units=km Bus1=C17130409 Bus2=CA746RES12
+
+new line.1743035 Geometry=RAMAL2 Length=0.01281 Units=km Bus1=C17130408 Bus2=CA746RES13
+
+new line.1743036 Geometry=RAMAL2 Length=0.01097 Units=km Bus1=C17130404 Bus2=CA746RES14
+
+new line.1743037 Geometry=RAMAL2 Length=0.00360 Units=km Bus1=C00644008 Bus2=CA746RES15
+
+new line.1743038 Geometry=RAMAL2 Length=0.00836 Units=km Bus1=C00644007 Bus2=CA746RES16
+
+new line.1743039 Geometry=RAMAL2 Length=0.00818 Units=km Bus1=C00590095 Bus2=CA746RES17
+
+new line.1743040 Geometry=RAMAL2 Length=0.01000 Units=km Bus1=C00644009 Bus2=CA746RES18
+
+new line.1743041 Geometry=RAMAL2 Length=0.00835 Units=km Bus1=C00644010 Bus2=CA746RES19
+
+new line.1743042 Geometry=RAMAL2 Length=0.01137 Units=km Bus1=C00644010 Bus2=CA746RES20
+
+new line.1743043 Geometry=RAMAL2 Length=0.01013 Units=km Bus1=C00644010 Bus2=CA746RES21
+
+new line.1743044 Geometry=RAMAL2 Length=0.00299 Units=km Bus1=C00644011 Bus2=CA746RES22
+
+new line.1743045 Geometry=RAMAL2 Length=0.01040 Units=km Bus1=C00644011 Bus2=CA746RES23
+
+new line.1743046 Geometry=RAMAL2 Length=0.01560 Units=km Bus1=C00644013 Bus2=CA746RES24
+
+new line.1743047 Geometry=RAMAL2 Length=0.01552 Units=km Bus1=C00644013 Bus2=CA746RES25
+
+new line.1743048 Geometry=RAMAL2 Length=0.01270 Units=km Bus1=C00644014 Bus2=CA746RES26
+
+!-----------------------------------------------------EV Lines----------------------------------------------------------
+
+New line.LINE_EV1 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES1 Bus2=EVRES1
+New line.LINE_EV2 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES2 Bus2=EVRES2
+New line.LINE_EV3 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES3 Bus2=EVRES3
+New line.LINE_EV4 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES4 Bus2=EVRES4
+New line.LINE_EV5 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES5 Bus2=EVRES5
+New line.LINE_EV6 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES6 Bus2=EVRES6
+New line.LINE_EV7 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES7 Bus2=EVRES7
+New line.LINE_EV8 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES8 Bus2=EVRES8
+New line.LINE_EV9 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES9 Bus2=EVRES9
+New line.LINE_EV10 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES10 Bus2=EVRES10
+New line.LINE_EV11 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES11 Bus2=EVRES11
+New line.LINE_EV12 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES12 Bus2=EVRES12
+New line.LINE_EV13 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES13 Bus2=EVRES13
+New line.LINE_EV14 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES14 Bus2=EVRES14
+New line.LINE_EV15 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES15 Bus2=EVRES15
+New line.LINE_EV16 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES16 Bus2=EVRES16
+New line.LINE_EV17 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES17 Bus2=EVRES17
+New line.LINE_EV18 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES18 Bus2=EVRES18
+New line.LINE_EV19 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES19 Bus2=EVRES19
+New line.LINE_EV20 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES20 Bus2=EVRES20
+New line.LINE_EV21 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES21 Bus2=EVRES21
+New line.LINE_EV22 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES22 Bus2=EVRES22
+New line.LINE_EV23 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES23 Bus2=EVRES23
+New line.LINE_EV24 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES24 Bus2=EVRES24
+New line.LINE_EV25 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES25 Bus2=EVRES25
+New line.LINE_EV26 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES26 Bus2=EVRES26
+
+!-----------------------------------------------------PV Lines----------------------------------------------------------xzNew line.LINE_EV1 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES1 Bus2=EVRES1
+
+New line.LINE_PV1 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES1 Bus2=PVRES1
+New line.LINE_PV2 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES2 Bus2=PVRES2
+New line.LINE_PV3 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES3 Bus2=PVRES3
+New line.LINE_PV4 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES4 Bus2=PVRES4
+New line.LINE_PV5 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES5 Bus2=PVRES5
+New line.LINE_PV6 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES6 Bus2=PVRES6
+New line.LINE_PV7 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES7 Bus2=PVRES7
+New line.LINE_PV8 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES8 Bus2=PVRES8
+New line.LINE_PV9 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES9 Bus2=PVRES9
+New line.LINE_PV10 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES10 Bus2=PVRES10
+New line.LINE_PV11 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES11 Bus2=PVRES11
+New line.LINE_PV12 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES12 Bus2=PVRES12
+New line.LINE_PV13 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES13 Bus2=PVRES13
+New line.LINE_PV14 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES14 Bus2=PVRES14
+New line.LINE_PV15 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES15 Bus2=PVRES15
+New line.LINE_PV16 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES16 Bus2=PVRES16
+New line.LINE_PV17 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES17 Bus2=PVRES17
+New line.LINE_PV18 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES18 Bus2=PVRES18
+New line.LINE_PV19 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES19 Bus2=PVRES19
+New line.LINE_PV20 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES20 Bus2=PVRES20
+New line.LINE_PV21 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES21 Bus2=PVRES21
+New line.LINE_PV22 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES22 Bus2=PVRES22
+New line.LINE_PV23 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES23 Bus2=PVRES23
+New line.LINE_PV24 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES24 Bus2=PVRES24
+New line.LINE_PV25 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES25 Bus2=PVRES25
+New line.LINE_PV26 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES26 Bus2=PVRES26
+
+!-------------- Tri-phase transformer --------------
+
+
+! TRAFO DE 75KVA Pvazio=260W, Ptot=1260W, Z=3,5%
+new Transformer.CA746	phases=3	windings=2	xhl=3.070439708 taps=[ 1.0 1.0 ] ! 1.00/0.9565217391/0.9130434783- 1.043478261/1.086956522
+~ wdg=1 bus=MT1.1.2.3	conn=delta	kV=13.80	kVA=75 %r=0.84
+~ wdg=2 bus=C17130410.1.2.3.0		conn=wye	kV=0.220	kVA=75 %r=0.84
+!---------------MFCR---------------
+
+! new generator.PV1   bus1=CA746RES1.2.3   phases=1 kV=(0.220) kW=1 pf=1 model=1 status=variable daily=PVshape
+
+
+!---------------------------------------------------LOADS---------------------------------------------------------------
+
+!---------------------------------------------- Street Lighting --------------------------------------------------------
+
+
+New Load.IP1   phases=1 bus1=C17130410.1.2 kv=0.22 kw=0.5  pf=0.92 conn=delta status=variable daily=IP10000
+New Load.IP2   phases=1 bus1=C17130412.2.3 kv=0.22 kw=0.5  pf=0.92 conn=delta status=variable daily=IP10000
+New Load.IP3   phases=1 bus1=C17130414.3.1 kv=0.22 kw=0.5  pf=0.92 conn=delta status=variable daily=IP10000
+New Load.IP4   phases=1 bus1=C17130411.1.2 kv=0.22 kw=0.5  pf=0.92 conn=delta status=variable daily=IP10000
+New Load.IP5   phases=1 bus1=C17130413.1.2 kv=0.22 kw=0.5  pf=0.92 conn=delta status=variable daily=IP10000
+New Load.IP6   phases=1 bus1=C17130409.2.3 kv=0.22 kw=0.5  pf=0.92 conn=delta status=variable daily=IP10000
+New Load.IP7   phases=1 bus1=C17130408.3.1 kv=0.22 kw=0.5  pf=0.92 conn=delta status=variable daily=IP10000
+New Load.IP8   phases=1 bus1=C17130407.3.1 kv=0.22 kw=0.25 pf=0.92 conn=delta status=variable daily=IP10000
+New Load.IP9   phases=1 bus1=C29405754.1.2 kv=0.22 kw=0.25 pf=0.92 conn=delta status=variable daily=IP10000
+New Load.IP10  phases=1 bus1=C17130405.1.2 kv=0.22 kw=0.25 pf=0.92 conn=delta status=variable daily=IP10000
+New Load.IP11  phases=1 bus1=C17130404.2.3 kv=0.22 kw=0.5  pf=0.92 conn=delta status=variable daily=IP10000
+New Load.IP12  phases=1 bus1=C17130403.3.1 kv=0.22 kw=0.5  pf=0.92 conn=delta status=variable daily=IP10000
+New Load.IP13  phases=1 bus1=C00644008.1.2 kv=0.22 kw=0.25 pf=0.92 conn=delta status=variable daily=IP10000
+New Load.IP14  phases=1 bus1=C00644007.2.3 kv=0.22 kw=0.25 pf=0.92 conn=delta status=variable daily=IP10000
+New Load.IP15  phases=1 bus1=C00590095.3.1 kv=0.22 kw=0.25 pf=0.92 conn=delta status=variable daily=IP10000
+New Load.IP16  phases=1 bus1=C00644009.1.2 kv=0.22 kw=0.25 pf=0.92 conn=delta status=variable daily=IP10000
+New Load.IP17  phases=1 bus1=C00644010.2.3 kv=0.22 kw=0.25 pf=0.92 conn=delta status=variable daily=IP10000
+New Load.IP18  phases=1 bus1=C00644011.3.1 kv=0.22 kw=0.25 pf=0.92 conn=delta status=variable daily=IP10000
+New Load.IP19  phases=1 bus1=C00644013.1.2 kv=0.22 kw=0.5  pf=0.92 conn=delta status=variable daily=IP10000
+New Load.IP20  phases=1 bus1=C00644014.2.3 kv=0.22 kw=0.5  pf=0.92 conn=delta status=variable daily=IP10000
+New Load.IP21  phases=1 bus1=C00644015.3.1 kv=0.22 kw=0.5  pf=0.92 conn=delta status=variable daily=IP10000
+New Load.IP22  phases=1 bus1=C00644012.1.2 kv=0.22 kw=0.5  pf=0.92 conn=delta status=variable daily=IP10000
+New Load.IP23  phases=1 bus1=C17130648.2.3 kv=0.22 kw=0.5  pf=0.92 conn=delta status=variable daily=IP10000
+
+!------------------------------------- Security Cabin Load ---------------------------------------------------------------
+
+New Load.cargagr  phases=3 bus1=CA746GR     kv=0.220  kw=0.500   pf=0.92 model=1 conn=wye status=variable daily=RES-Type1-WE
+
+!------------------------------------- Residential Loads ---------------------------------------------------------------
+
+New Load.residence1   phases=3 bus1=CA746RES1   kV=0.220  kW=2.500     pf=0.92 model=1 conn=wye status=variable daily=RES-Type4-WE
+New Load.residence2   phases=3 bus1=CA746RES2   kV=0.220  kW=3.024   pf=0.92 model=1 conn=wye status=variable daily=RES-Type2-WE
+New Load.residence3   phases=3 bus1=CA746RES3   kV=0.220  kW=2.604   pf=0.92 model=1 conn=wye status=variable daily=RES-Type3-WE
+New Load.residence4   phases=3 bus1=CA746RES4   kV=0.220  kW=2.749  pf=0.92 model=1 conn=wye status=variable daily=RES-Type1-WE
+New Load.residence5   phases=3 bus1=CA746RES5   kV=0.220  kW=2.635   pf=0.92 model=1 conn=wye status=variable daily=RES-Type5-WE
+New Load.residence6   phases=3 bus1=CA746RES6   kV=0.220  kW=2.377   pf=0.92 model=1 conn=wye status=variable daily=RES-Type4-WE
+New Load.residence7   phases=3 bus1=CA746RES7   kV=0.220  kW=2.170   pf=0.92 model=1 conn=wye status=variable daily=RES-Type6-WE
+New Load.residence8   phases=3 bus1=CA746RES8   kV=0.220  kW=2.995   pf=0.92 model=1 conn=wye status=variable daily=RES-Type7-WE
+New Load.residence9   phases=3 bus1=CA746RES9   kV=0.220  kW=3.135   pf=0.92 model=1 conn=wye status=variable daily=RES-Type1-WE
+New Load.residence10  phases=3 bus1=CA746RES10  kV=0.220  kW=3.126   pf=0.92 model=1 conn=wye status=variable daily=RES-Type2-WE
+New Load.residence11  phases=3 bus1=CA746RES11  kV=0.220  kW=2.875   pf=0.92 model=1 conn=wye status=variable daily=RES-Type1-WE
+New Load.residence12  phases=3 bus1=CA746RES12  kV=0.220  kW=2.700   pf=0.92 model=1 conn=wye status=variable daily=RES-Type1-WE
+New Load.residence13  phases=3 bus1=CA746RES13  kV=0.220  kW=2.620   pf=0.92 model=1 conn=wye status=variable daily=RES-Type4-WE
+New Load.residence14  phases=3 bus1=CA746RES14  kV=0.220  kW=2.726   pf=0.92 model=1 conn=wye status=variable daily=RES-Type4-WE
+New Load.residence15  phases=3 bus1=CA746RES15  kV=0.220  kW=2.875   pf=0.92 model=1 conn=wye status=variable daily=RES-Type5-WE
+New Load.residence16  phases=3 bus1=CA746RES16  kV=0.220  kW=2.300   pf=0.92 model=1 conn=wye status=variable daily=RES-Type6-WE
+New Load.residence17  phases=3 bus1=CA746RES17  kV=0.220  kW=2.620   pf=0.92 model=1 conn=wye status=variable daily=RES-Type6-WE
+New Load.residence18  phases=3 bus1=CA746RES18  kV=0.220  kW=2.726   pf=0.92 model=1 conn=wye status=variable daily=RES-Type8-WE
+New Load.residence19  phases=3 bus1=CA746RES19  kV=0.220  kW=2.875   pf=0.92 model=1 conn=wye status=variable daily=RES-Type9-WE
+New Load.residence20  phases=3 bus1=CA746RES20  kV=0.220  kW=2.817   pf=0.92 model=1 conn=wye status=variable daily=RES-Type1-WE
+New Load.residence21  phases=3 bus1=CA746RES21  kV=0.220  kW=3.620   pf=0.92 model=1 conn=wye status=variable daily=RES-Type2-WE
+New Load.residence22  phases=3 bus1=CA746RES22  kV=0.220  kW=3.726   pf=0.92 model=1 conn=wye status=variable daily=RES-Type3-WE
+New Load.residence23  phases=3 bus1=CA746RES23  kV=0.220  kW=3.875   pf=0.92 model=1 conn=wye status=variable daily=RES-Type3-WE
+New Load.residence24  phases=3 bus1=CA746RES24  kV=0.220  kW=2.800   pf=0.92 model=1 conn=wye status=variable daily=RES-Type6-WE
+New Load.residence25  phases=3 bus1=CA746RES25  kV=0.220  kW=2.620   pf=0.92 model=1 conn=wye status=variable daily=RES-Type7-WE
+New Load.residence26  phases=3 bus1=CA746RES26  kV=0.220  kW=2.300   pf=0.92 model=1 conn=wye status=variable daily=RES-Type7-WE
+
+!------------------- Shapes EV -----------------------
+
+
+New Loadshape.shape_ev_1 npts=1440 minterval=1 mult=(file=../data/electrical_vehicles/ev_shapes_charge.csv, col=1)
+New Loadshape.shape_ev_2 npts=1440 minterval=1 mult=(file=../data/electrical_vehicles/ev_shapes_charge.csv, col=2)
+New Loadshape.shape_ev_3 npts=1440 minterval=1 mult=(file=../data/electrical_vehicles/ev_shapes_charge.csv, col=3)
+New Loadshape.shape_ev_4 npts=1440 minterval=1 mult=(file=../data/electrical_vehicles/ev_shapes_charge.csv, col=4)
+New Loadshape.shape_ev_5 npts=1440 minterval=1 mult=(file=../data/electrical_vehicles/ev_shapes_charge.csv, col=5)
+New Loadshape.shape_ev_6 npts=1440 minterval=1 mult=(file=../data/electrical_vehicles/ev_shapes_charge.csv, col=6)
+New Loadshape.shape_ev_7 npts=1440 minterval=1 mult=(file=../data/electrical_vehicles/ev_shapes_charge.csv, col=7)
+New Loadshape.shape_ev_8 npts=1440 minterval=1 mult=(file=../data/electrical_vehicles/ev_shapes_charge.csv, col=8)
+New Loadshape.shape_ev_9 npts=1440 minterval=1 mult=(file=../data/electrical_vehicles/ev_shapes_charge.csv, col=9)
+New Loadshape.shape_ev_10 npts=1440 minterval=1 mult=(file=../data/electrical_vehicles/ev_shapes_charge.csv, col=10)
+New Loadshape.shape_ev_11 npts=1440 minterval=1 mult=(file=../data/electrical_vehicles/ev_shapes_charge.csv, col=11)
+New Loadshape.shape_ev_12 npts=1440 minterval=1 mult=(file=../data/electrical_vehicles/ev_shapes_charge.csv, col=12)
+New Loadshape.shape_ev_13 npts=1440 minterval=1 mult=(file=../data/electrical_vehicles/ev_shapes_charge.csv, col=13)
+New Loadshape.shape_ev_14 npts=1440 minterval=1 mult=(file=../data/electrical_vehicles/ev_shapes_charge.csv, col=14)
+New Loadshape.shape_ev_15 npts=1440 minterval=1 mult=(file=../data/electrical_vehicles/ev_shapes_charge.csv, col=15)
+New Loadshape.shape_ev_16 npts=1440 minterval=1 mult=(file=../data/electrical_vehicles/ev_shapes_charge.csv, col=16)
+New Loadshape.shape_ev_17 npts=1440 minterval=1 mult=(file=../data/electrical_vehicles/ev_shapes_charge.csv, col=17)
+New Loadshape.shape_ev_18 npts=1440 minterval=1 mult=(file=../data/electrical_vehicles/ev_shapes_charge.csv, col=18)
+New Loadshape.shape_ev_19 npts=1440 minterval=1 mult=(file=../data/electrical_vehicles/ev_shapes_charge.csv, col=19)
+New Loadshape.shape_ev_20 npts=1440 minterval=1 mult=(file=../data/electrical_vehicles/ev_shapes_charge.csv, col=20)
+New Loadshape.shape_ev_21 npts=1440 minterval=1 mult=(file=../data/electrical_vehicles/ev_shapes_charge.csv, col=21)
+New Loadshape.shape_ev_22 npts=1440 minterval=1 mult=(file=../data/electrical_vehicles/ev_shapes_charge.csv, col=22)
+New Loadshape.shape_ev_23 npts=1440 minterval=1 mult=(file=../data/electrical_vehicles/ev_shapes_charge.csv, col=23)
+New Loadshape.shape_ev_24 npts=1440 minterval=1 mult=(file=../data/electrical_vehicles/ev_shapes_charge.csv, col=24)
+New Loadshape.shape_ev_25 npts=1440 minterval=1 mult=(file=../data/electrical_vehicles/ev_shapes_charge.csv, col=25)
+New Loadshape.shape_ev_26 npts=1440 minterval=1 mult=(file=../data/electrical_vehicles/ev_shapes_charge.csv, col=26)
+
+
+!--------------------------------------------------Storages EV ---------------------------------------------------------------
+
+New Storage.ev_1 bus1=CA746RES1.1.3 phases=2 kV=0.220 kWhrated=24 pf=0.95 kW=4.0 conn=delta daily=shape_ev_1 dispmode=follow
+New Storage.ev_2 bus1=CA746RES2.1.2 phases=2 kV=0.220 kWhrated=24 pf=0.95 kW=4.0 conn=delta daily=shape_ev_2 dispmode=follow
+New Storage.ev_3 bus1=CA746RES3.2.3 phases=2 kV=0.220 kWhrated=24 pf=0.95 kW=4.0 conn=delta daily=shape_ev_3 dispmode=follow
+New Storage.ev_4 bus1=CA746RES4.1.3 phases=2 kV=0.220 kWhrated=24 pf=0.95 kW=4.0 conn=delta daily=shape_ev_4 dispmode=follow
+New Storage.ev_5 bus1=CA746RES5.2.3 phases=2 kV=0.220 kWhrated=24 pf=0.95 kW=4.0 conn=delta daily=shape_ev_5 dispmode=follow
+New Storage.ev_6 bus1=CA746RES6.1.2 phases=2 kV=0.220 kWhrated=24 pf=0.95 kW=4.0 conn=delta daily=shape_ev_6 dispmode=follow
+New Storage.ev_7 bus1=CA746RES7.1.3 phases=2 kV=0.220 kWhrated=24 pf=0.95 kW=4.0 conn=delta daily=shape_ev_7 dispmode=follow
+New Storage.ev_8 bus1=CA746RES8.2.3 phases=2 kV=0.220 kWhrated=24 pf=0.95 kW=4.0 conn=delta dailyCA746RES1=shape_ev_8 dispmode=follow
+New Storage.ev_9 bus1=CA746RES9.2.3 phases=2 kV=0.220 kWhrated=24 pf=0.95 kW=4.0 conn=delta daily=shape_ev_9 dispmode=follow
+New Storage.ev_10 bus1=CA746RES10.1.3 phases=2 kV=0.220 kWhrated=24 pf=0.95 kW=4.0 conn=delta daily=shape_ev_10 dispmode=follow
+New Storage.ev_11 bus1=CA746RES11.2.3 phases=2 kV=0.220 kWhrated=24 pf=0.95 kW=4.0 conn=delta daily=shape_ev_11 dispmode=follow
+New Storage.ev_12 bus1=CA746RES12.1.2 phases=2 kV=0.220 kWhrated=24 pf=0.95 kW=4.0 conn=delta daily=shape_ev_12 dispmode=follow
+New Storage.ev_13 bus1=CA746RES13.1.2 phases=2 kV=0.220 kWhrated=24 pf=0.95 kW=4.0 conn=delta daily=shape_ev_13 dispmode=follow
+New Storage.ev_14 bus1=CA746RES14.2.3 phases=2 kV=0.220 kWhrated=24 pf=0.95 kW=4.0 conn=delta daily=shape_ev_14 dispmode=follow
+New Storage.ev_15 bus1=CA746RES15.1.3 phases=2 kV=0.220 kWhrated=24 pf=0.95 kW=4.0 conn=delta daily=shape_ev_15 dispmode=follow
+New Storage.ev_16 bus1=CA746RES16.1.2 phases=2 kV=0.220 kWhrated=24 pf=0.95 kW=4.0 conn=delta daily=shape_ev_16 dispmode=follow
+New Storage.ev_17 bus1=CA746RES17.1.3 phases=2 kV=0.220 kWhrated=24 pf=0.95 kW=4.0 conn=delta daily=shape_ev_17 dispmode=follow
+New Storage.ev_18 bus1=CA746RES18.2.3 phases=2 kV=0.220 kWhrated=24 pf=0.95 kW=4.0 conn=delta daily=shape_ev_18 dispmode=follow
+New Storage.ev_19 bus1=CA746RES19.2.3 phases=2 kV=0.220 kWhrated=24 pf=0.95 kW=4.0 conn=delta daily=shape_ev_19 dispmode=follow
+New Storage.ev_20 bus1=CA746RES20.1.3 phases=2 kV=0.220 kWhrated=24 pf=0.95 kW=4.0 conn=delta daily=shape_ev_20 dispmode=follow
+New Storage.ev_21 bus1=CA746RES21.1.2 phases=2 kV=0.220 kWhrated=24 pf=0.95 kW=4.0 conn=delta daily=shape_ev_21 dispmode=follow
+New Storage.ev_22 bus1=CA746RES22.1.3 phases=2 kV=0.220 kWhrated=24 pf=0.95 kW=4.0 conn=delta daily=shape_ev_22 dispmode=follow
+New Storage.ev_23 bus1=CA746RES23.1.2 phases=2 kV=0.220 kWhrated=24 pf=0.95 kW=4.0 conn=delta daily=shape_ev_23 dispmode=follow
+New Storage.ev_24 bus1=CA746RES24.2.3 phases=2 kV=0.220 kWhrated=24 pf=0.95 kW=4.0 conn=delta daily=shape_ev_24 dispmode=follow
+New Storage.ev_25 bus1=CA746RES25.1.2 phases=2 kV=0.220 kWhrated=24 pf=0.95 kW=4.0 conn=delta daily=shape_ev_25 dispmode=follow
+New Storage.ev_26 bus1=CA746RES26.1.3 phases=2 kV=0.220 kWhrated=24 pf=0.95 kW=4.0 conn=delta daily=shape_ev_26 dispmode=follow
+
+!--------------------------------------------------PV Systems ---------------------------------------------------------------
+
+! New PvSystem.pv_1 bus1=CA744RES1.1.3 kv=4.16 pf=0.95 conn=delta kVA=6000 daily=pv_sunny varfollowinverter=true phases=2 irrad=0.98 pmpp=5 temperature=28 %cutin=0.1 %cutout=0.1 effcurve=MyEff P-tCurve=MyPvsT TDaily=MyTemp
+
+
+New PVSystem.pv_1 bus1=CA746RES1.1.2 phases=2 conn=delta  kV=0.220  kVA=30 pmpp=18 pf=0.95 daily=pv_shape_sunny varFollowInverter=true  %cutin=0.1 %cutout=0.1
+New PVSystem.pv_2 bus1=CA746RES2.3.2 phases=2 conn=delta  kV=0.220  kVA=30 pmpp=18 pf=0.95 daily=pv_shape_sunny varFollowInverter=true  %cutin=0.1 %cutout=0.1
+New PVSystem.pv_3 bus1=CA746RES3.1.2 phases=2 conn=delta  kV=0.220  kVA=30 pmpp=18 pf=0.95 daily=pv_shape_sunny varFollowInverter=true  %cutin=0.1 %cutout=0.1
+New PVSystem.pv_4 bus1=CA746RES4.1.3 phases=2 conn=delta  kV=0.220  kVA=30 pmpp=18 pf=0.95 daily=pv_shape_sunny varFollowInverter=true  %cutin=0.1 %cutout=0.1
+New PVSystem.pv_5 bus1=CA746RES5.1.2 phases=2 conn=delta  kV=0.220  kVA=30 pmpp=18 pf=0.95 daily=pv_shape_sunny varFollowInverter=true  %cutin=0.1 %cutout=0.1
+New PVSystem.pv_6 bus1=CA746RES6.3.2 phases=2 conn=delta  kV=0.220  kVA=30 pmpp=18 pf=0.95 daily=pv_shape_sunny varFollowInverter=true  %cutin=0.1 %cutout=0.1
+New PVSystem.pv_7 bus1=CA746RES7.3.2 phases=2 conn=delta  kV=0.220  kVA=30 pmpp=18 pf=0.95 daily=pv_shape_sunny varFollowInverter=true  %cutin=0.1 %cutout=0.1
+New PVSystem.pv_8 bus1=CA746RES8.1.2 phases=2 conn=delta  kV=0.220  kVA=30 pmpp=18 pf=0.95 daily=pv_shape_sunny varFollowInverter=true  %cutin=0.1 %cutout=0.1
+New PVSystem.pv_9 bus1=CA746RES9.1.3 phases=2 conn=delta  kV=0.220  kVA=30 pmpp=18 pf=0.95 daily=pv_shape_sunny varFollowInverter=true  %cutin=0.1 %cutout=0.1
+New PVSystem.pv_10 bus1=CA746RES10.1.3 phases=2 conn=delta  kV=0.220  kVA=30 pmpp=18 pf=0.95 daily=pv_shape_sunny varFollowInverter=true  %cutin=0.1 %cutout=0.1
+New PVSystem.pv_11 bus1=CA746RES11.1.2 phases=2 conn=delta  kV=0.220  kVA=30 pmpp=18 pf=0.95 daily=pv_shape_sunny varFollowInverter=true  %cutin=0.1 %cutout=0.1
+New PVSystem.pv_12 bus1=CA746RES12.3.2 phases=2 conn=delta  kV=0.220  kVA=30 pmpp=18 pf=0.95 daily=pv_shape_sunny varFollowInverter=true  %cutin=0.1 %cutout=0.1
+New PVSystem.pv_13 bus1=CA746RES13.1.3 phases=2 conn=delta  kV=0.220  kVA=30 pmpp=18 pf=0.95 daily=pv_shape_sunny varFollowInverter=true  %cutin=0.1 %cutout=0.1
+New PVSystem.pv_14 bus1=CA746RES14.3.2 phases=2 conn=delta  kV=0.220  kVA=30 pmpp=18 pf=0.95 daily=pv_shape_sunny varFollowInverter=true  %cutin=0.1 %cutout=0.1
+New PVSystem.pv_15 bus1=CA746RES15.1.2 phases=2 conn=delta  kV=0.220  kVA=30 pmpp=18 pf=0.95 daily=pv_shape_sunny varFollowInverter=true  %cutin=0.1 %cutout=0.1
+New PVSystem.pv_16 bus1=CA746RES16.3.2 phases=2 conn=delta  kV=0.220  kVA=30 pmpp=18 pf=0.95 daily=pv_shape_sunny varFollowInverter=true  %cutin=0.1 %cutout=0.1
+New PVSystem.pv_17 bus1=CA746RES17.3.2 phases=2 conn=delta  kV=0.220  kVA=30 pmpp=18 pf=0.95 daily=pv_shape_sunny varFollowInverter=true  %cutin=0.1 %cutout=0.1
+New PVSystem.pv_18 bus1=CA746RES18.1.2 phases=2 conn=delta  kV=0.220  kVA=30 pmpp=18 pf=0.95 daily=pv_shape_sunny varFollowInverter=true  %cutin=0.1 %cutout=0.1
+New PVSystem.pv_19 bus1=CA746RES19.1.3 phases=2 conn=delta  kV=0.220  kVA=30 pmpp=18 pf=0.95 daily=pv_shape_sunny varFollowInverter=true  %cutin=0.1 %cutout=0.1
+New PVSystem.pv_20 bus1=CA746RES20.2.1 phases=2 conn=delta  kV=0.220  kVA=30 pmpp=18 pf=0.95 daily=pv_shape_sunny varFollowInverter=true  %cutin=0.1 %cutout=0.1
+New PVSystem.pv_21 bus1=CA746RES21.3.2 phases=2 conn=delta  kV=0.220  kVA=30 pmpp=18 pf=0.95 daily=pv_shape_sunny varFollowInverter=true  %cutin=0.1 %cutout=0.1
+New PVSystem.pv_22 bus1=CA746RES22.3.2 phases=2 conn=delta  kV=0.220  kVA=30 pmpp=18 pf=0.95 daily=pv_shape_sunny varFollowInverter=true  %cutin=0.1 %cutout=0.1
+New PVSystem.pv_23 bus1=CA746RES23.1.2 phases=2 conn=delta  kV=0.220  kVA=30 pmpp=18 pf=0.95 daily=pv_shape_sunny varFollowInverter=true  %cutin=0.1 %cutout=0.1
+New PVSystem.pv_24 bus1=CA746RES24.1.3 phases=2 conn=delta  kV=0.220  kVA=30 pmpp=18 pf=0.95 daily=pv_shape_sunny varFollowInverter=true  %cutin=0.1 %cutout=0.1
+New PVSystem.pv_25 bus1=CA746RES25.3.1 phases=2 conn=delta  kV=0.220  kVA=30 pmpp=18 pf=0.95 daily=pv_shape_sunny varFollowInverter=true  %cutin=0.1 %cutout=0.1
+New PVSystem.pv_26 bus1=CA746RES26.3.1 phases=2 conn=delta  kV=0.220  kVA=30 pmpp=18 pf=0.95 daily=pv_shape_sunny varFollowInverter=true  %cutin=0.1 %cutout=0.1
+
+!-------------------------------------------------- Controls ---------------------------------------------------------------
+
+! New InvControl.control_voltwatt mode=voltwatt voltage_curvex_ref=rated voltwatt_curve=vw_curve voltwattYaxis=PAVAILABLEPU voltageChangeTolerance=0.001 activePChangeTolerance=0.001 deltaP_factor=0.1 eventLog=true enabled=true
+! New InvControl.control_voltvar mode=voltvar  voltage_curvex_ref=rated vvc_curve1=vv_curve  voltageChangeTolerance=0.9 varChangeTolerance=0.9 deltaQ_factor=-1 eventLog=true enabled=true
+
+
+!------------------Meters and Monitors-----------------
+
+New Monitor.residence_1_voltages element=Load.residence1 terminal=1 mode=0
+New Monitor.residence_1_powers element=Load.residence1 terminal=1 mode=1 ppolar=no
+New energymeter.busbar element=transformer.CA746   terminal=1
+
+!-------------------------------------------------- Definitions and solve ---------------------------------------------------------------
+
+
+Set VoltageBases=[13.8 0.220]
+CalcVoltageBases
+Set Mode=daily
+Set Stepsize=1m
+Set Number=1440
+Set MaxControliter=1000
+Set Maxiterations=100
+
+Solve
+
+
+!---------------------------------------------Exports and Plots---------------------------------------------------------
+
+Export Monitors residence_1_voltages
+Export Monitors residence_1_powers
+
+Plot monitor object= residence_1_voltages channels=(1 3 5 )
