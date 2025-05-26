@@ -35,33 +35,6 @@ class FixedValuesCA746:
             1278, 2422, 2112, 3728, 325, 4206, 2808]
     }
 
-class EvKwh(Enum):
-    TOYOTA_RAV4_SUV = 41.8
-    TESLA_MODEL_S = 85
-    TOYOTA_PRIUS_PLUG_IN = 4.4
-    RENAULT_FLUENCE_RENAULT_ZOE = 22
-    OPEL_AMPERA_MITSUBISHI_I_MIEV_CITROEN_C_ZERO_PEUGEOT_ION = 16
-    NISSAN_LEAF_FIAT_500E = 24
-    FORD_FUSION_ENERGY = 8
-    MIA_MIA = 12
-    FORD_FOCUS_ELECTRIC = 23
-    FORD_C_MAX_ENERGY = 8
-    BYD_E6 = 61
-    CHEVROLET_SPARK_HONDA_FIT_EV = 20
-    CHEVROLET_VOLT = 17
-
-
-class PVShapesPossibilities(Enum):
-    PV_SHAPE_SUNNY = 'pv_shape_sunny'
-    PV_SHAPE_RAINY = 'pv_shape_rainy'
-    PV_SHAPE_CLOUDY = 'pv_shape_cloudy'
-    PV_SHAPE_VARIED = 'pv_shape_varied'
-
-
-class EvChargerPowerKw(Enum):
-    MAX_KW = 7.2
-    MIN_KW = 3.6
-
 
 class MaxPowerPVKW(Enum):
     MAX_KW = 10
@@ -70,36 +43,9 @@ class MaxPowerPVKW(Enum):
 EV_CHARGER_POWER_POSSIBILITIES = [5.225, 14.167, 2.933, 2.444, 10.72, 6.286, 2.286, 3.429, 3.2, 16.4, 19.0, 6.0, 3.2,
                                   4.989, 6.667, 6.892]
 
+EV_BATTERY_CAPACITY_POSSIBILITIES = 27
 
-TARGET_LOADS_CA746 = """
-    New Load.residence1   phases=3 bus1=CA746RES1   kV=0.220  kW=2.500     pf=0.92 model=1 conn=wye status=variable daily=RES-Type4-WE
-    New Load.residence2   phases=3 bus1=CA746RES2   kV=0.220  kW=3.024   pf=0.92 model=1 conn=wye status=variable daily=RES-Type2-WE
-    New Load.residence3   phases=3 bus1=CA746RES3   kV=0.220  kW=2.604   pf=0.92 model=1 conn=wye status=variable daily=RES-Type3-WE
-    New Load.residence4   phases=3 bus1=CA746RES4   kV=0.220  kW=2.749  pf=0.92 model=1 conn=wye status=variable daily=RES-Type1-WE
-    New Load.residence5   phases=3 bus1=CA746RES5   kV=0.220  kW=2.635   pf=0.92 model=1 conn=wye status=variable daily=RES-Type5-WE
-    New Load.residence6   phases=3 bus1=CA746RES6   kV=0.220  kW=2.377   pf=0.92 model=1 conn=wye status=variable daily=RES-Type4-WE
-    New Load.residence7   phases=3 bus1=CA746RES7   kV=0.220  kW=2.170   pf=0.92 model=1 conn=wye status=variable daily=RES-Type6-WE
-    New Load.residence8   phases=3 bus1=CA746RES8   kV=0.220  kW=2.995   pf=0.92 model=1 conn=wye status=variable daily=RES-Type7-WE
-    New Load.residence9   phases=3 bus1=CA746RES9   kV=0.220  kW=3.135   pf=0.92 model=1 conn=wye status=variable daily=RES-Type1-WE
-    New Load.residence10  phases=3 bus1=CA746RES10  kV=0.220  kW=3.126   pf=0.92 model=1 conn=wye status=variable daily=RES-Type2-WE
-    New Load.residence11  phases=3 bus1=CA746RES11  kV=0.220  kW=2.875   pf=0.92 model=1 conn=wye status=variable daily=RES-Type1-WE
-    New Load.residence12  phases=3 bus1=CA746RES12  kV=0.220  kW=2.700   pf=0.92 model=1 conn=wye status=variable daily=RES-Type1-WE
-    New Load.residence13  phases=3 bus1=CA746RES13  kV=0.220  kW=2.620   pf=0.92 model=1 conn=wye status=variable daily=RES-Type4-WE
-    New Load.residence14  phases=3 bus1=CA746RES14  kV=0.220  kW=2.726   pf=0.92 model=1 conn=wye status=variable daily=RES-Type4-WE
-    New Load.residence15  phases=3 bus1=CA746RES15  kV=0.220  kW=2.875   pf=0.92 model=1 conn=wye status=variable daily=RES-Type5-WE
-    New Load.residence16  phases=3 bus1=CA746RES16  kV=0.220  kW=2.300   pf=0.92 model=1 conn=wye status=variable daily=RES-Type6-WE
-    New Load.residence17  phases=3 bus1=CA746RES17  kV=0.220  kW=2.620   pf=0.92 model=1 conn=wye status=variable daily=RES-Type6-WE
-    New Load.residence18  phases=3 bus1=CA746RES18  kV=0.220  kW=2.726   pf=0.92 model=1 conn=wye status=variable daily=RES-Type8-WE
-    New Load.residence19  phases=3 bus1=CA746RES19  kV=0.220  kW=2.875   pf=0.92 model=1 conn=wye status=variable daily=RES-Type9-WE
-    New Load.residence20  phases=3 bus1=CA746RES20  kV=0.220  kW=2.817   pf=0.92 model=1 conn=wye status=variable daily=RES-Type1-WE
-    New Load.residence21  phases=3 bus1=CA746RES21  kV=0.220  kW=3.620   pf=0.92 model=1 conn=wye status=variable daily=RES-Type2-WE
-    New Load.residence22  phases=3 bus1=CA746RES22  kV=0.220  kW=3.726   pf=0.92 model=1 conn=wye status=variable daily=RES-Type3-WE
-    New Load.residence23  phases=3 bus1=CA746RES23  kV=0.220  kW=3.875   pf=0.92 model=1 conn=wye status=variable daily=RES-Type3-WE
-    New Load.residence24  phases=3 bus1=CA746RES24  kV=0.220  kW=2.800   pf=0.92 model=1 conn=wye status=variable daily=RES-Type6-WE
-    New Load.residence25  phases=3 bus1=CA746RES25  kV=0.220  kW=2.620   pf=0.92 model=1 conn=wye status=variable daily=RES-Type7-WE
-    New Load.residence26  phases=3 bus1=CA746RES26  kV=0.220  kW=2.300   pf=0.92 model=1 conn=wye status=variable daily=RES-Type7-WE
-"""
-
+TOTAL_RESIDENCES = 26
 
 PL_PERCENTAGES = (25, 50, 75, 100)
 
@@ -119,3 +65,10 @@ ordered_labels = [" ",
                   ]
 
 control_modes = ['no_control', 'voltvar', 'voltwatt']
+
+target_residences = (1, 14)
+
+voltages_limits = (110, 117, 127, 133, 135)
+voltages_limits_pu = (0.866141, 0.921259, 1, 1.047244, 1.062992)
+
+PV_SHAPES_POSSIBILITIES = ['pv_shape_sunny', 'pv_shape_rainy', 'pv_shape_cloudy', 'pv_shape_varied']

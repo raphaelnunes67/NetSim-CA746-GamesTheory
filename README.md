@@ -18,7 +18,7 @@ python -m venv venv
 3. Activate virtual environment:
 
 ```sh
-.\venv\Scritps\Activate.ps1
+.\venv\Scripts\Activate.ps1
 ```
 
 4. Install o packages:

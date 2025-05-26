@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
-
 class Plotter:
     def __init__(self):
+        
         self.plt = plt
         self.title = ''
         self.axis_name_x = ''
@@ -10,6 +10,9 @@ class Plotter:
         self.y_values = []
         self.labels = dict()
 
+    def reset_data(self):
+        self.__init__()
+        
     def set_data(self, x_values, y_values_list, labels=None):
         """Set the x values and list of y values for plotting"""
         self.x_values = x_values
@@ -35,6 +38,7 @@ class Plotter:
 
     def perform_plot(self, bases=1.00):
         """Create the plot with all data series"""
+        self.plt.figure()
         for i, y_values in enumerate(self.y_values):
             label = self.labels.get(i, f"Series {i+1}")
             self.plt.plot(self.x_values, [y / bases for y in y_values], label=label)
@@ -47,7 +51,7 @@ class Plotter:
         if show_legend:
             self.plt.legend(loc="upper left")
         if show_grid:
-            plt.grid(True)
+            self.plt.grid(True)
 
         if limit_down_y and limit_up_y:
             self.plt.axhline(y=limit_up_y, color='r', linestyle='--')
@@ -90,6 +94,7 @@ class Plotter:
     def save_figure(self, figure_name, dpi=300):
         """Save the figure to a file"""
         self.plt.savefig(figure_name, dpi=dpi)
+        self.close_figure()
 
 
 if __name__ == "__main__":
@@ -112,4 +117,4 @@ if __name__ == "__main__":
     # Display the plot (commented out for this example)
     plotter.show_figure()
     
-    print("Plotter class created successfully")
+    print("Plotter done")

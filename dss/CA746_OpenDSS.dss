@@ -158,11 +158,11 @@ new Wiredata.1000010 Runits=km Rac=1.6119 GMRunits=m GMRac=0.00588    Radunits=m
 
 ! Isolated Contuctors
 
-new wiredata.1000011 Runits=km Rdc=0.3424 GMRunits=m Radunits=m Diam=0.01680 Emergamps=268 !120mm2 PE fase  NEXANS/Equatorial Par√°
-new wiredata.1000012 Runits=km Rdc=0.5787 GMRunits=m Radunits=m Diam=0.01335 Emergamps=190 !70mm2  PE fase  NEXANS/Equatorial Par√°
-new wiredata.1000013 Runits=km Rdc=0.8327 GMRunits=m Radunits=m Diam=0.01140 Emergamps=152 !50mm2  PE fase  NEXANS/Equatorial Par√°
-new wiredata.1000014 Runits=km Rdc=1.1201 GMRunits=m Radunits=m Diam=0.01020 Emergamps=126 !35mm2  PE fase  NEXANS/Equatorial Par√°
-new wiredata.1000015 Runits=km Rdc=1.5390 GMRunits=m Radunits=m Diam=0.00880 Emergamps=104 !25mm2  PE fase  NEXANS/Equatorial Par√°
+new wiredata.1000011 Runits=km Rdc=0.3424 GMRunits=m Radunits=m Diam=0.01680 Emergamps=268 !120mm2 PE fase  NEXANS/Equatorial Par·
+new wiredata.1000012 Runits=km Rdc=0.5787 GMRunits=m Radunits=m Diam=0.01335 Emergamps=190 !70mm2  PE fase  NEXANS/Equatorial Par·
+new wiredata.1000013 Runits=km Rdc=0.8327 GMRunits=m Radunits=m Diam=0.01140 Emergamps=152 !50mm2  PE fase  NEXANS/Equatorial Par·
+new wiredata.1000014 Runits=km Rdc=1.1201 GMRunits=m Radunits=m Diam=0.01020 Emergamps=126 !35mm2  PE fase  NEXANS/Equatorial Par·
+new wiredata.1000015 Runits=km Rdc=1.5390 GMRunits=m Radunits=m Diam=0.00880 Emergamps=104 !25mm2  PE fase  NEXANS/Equatorial Par·
 
 !------Conductors Geometry settings------
 
@@ -386,32 +386,32 @@ new line.1743048 Geometry=RAMAL2 Length=0.01270 Units=km Bus1=C00644014 Bus2=CA7
 
 !-----------------------------------------------------EV Lines----------------------------------------------------------
 
-New line.LINE_EV1 phases=2 length=30 units=cm linecode=PvEvLine Bus1=CA746RES1 Bus2=EVRES1
-New line.LINE_EV2 phases=2 length=30 units=cm linecode=PvEvLine Bus1=CA746RES2 Bus2=EVRES2
-New line.LINE_EV3 phases=2 length=30 units=cm linecode=PvEvLine Bus1=CA746RES3 Bus2=EVRES3
-New line.LINE_EV4 phases=2 length=30 units=cm linecode=PvEvLine Bus1=CA746RES4 Bus2=EVRES4
-New line.LINE_EV5 phases=2 length=30 units=cm linecode=PvEvLine Bus1=CA746RES5 Bus2=EVRES5
-New line.LINE_EV6 phases=2 length=30 units=cm linecode=PvEvLine Bus1=CA746RES6 Bus2=EVRES6
-New line.LINE_EV7 phases=2 length=30 units=cm linecode=PvEvLine Bus1=CA746RES7 Bus2=EVRES7
-New line.LINE_EV8 phases=2 length=30 units=cm linecode=PvEvLine Bus1=CA746RES8 Bus2=EVRES8
-New line.LINE_EV9 phases=2 length=30 units=cm linecode=PvEvLine Bus1=CA746RES9 Bus2=EVRES9
-New line.LINE_EV10 phases=2 length=30 units=cm linecode=PvEvLine Bus1=CA746RES10 Bus2=EVRES10
-New line.LINE_EV11 phases=2 length=30 units=cm linecode=PvEvLine Bus1=CA746RES11 Bus2=EVRES11
-New line.LINE_EV12 phases=2 length=30 units=cm linecode=PvEvLine Bus1=CA746RES12 Bus2=EVRES12
-New line.LINE_EV13 phases=2 length=30 units=cm linecode=PvEvLine Bus1=CA746RES13 Bus2=EVRES13
-New line.LINE_EV14 phases=2 length=30 units=cm linecode=PvEvLine Bus1=CA746RES14 Bus2=EVRES14
-New line.LINE_EV15 phases=2 length=30 units=cm linecode=PvEvLine Bus1=CA746RES15 Bus2=EVRES15
-New line.LINE_EV16 phases=2 length=30 units=cm linecode=PvEvLine Bus1=CA746RES16 Bus2=EVRES16
-New line.LINE_EV17 phases=2 length=30 units=cm linecode=PvEvLine Bus1=CA746RES17 Bus2=EVRES17
-New line.LINE_EV18 phases=2 length=30 units=cm linecode=PvEvLine Bus1=CA746RES18 Bus2=EVRES18
-New line.LINE_EV19 phases=2 length=30 units=cm linecode=PvEvLine Bus1=CA746RES19 Bus2=EVRES19
-New line.LINE_EV20 phases=2 length=30 units=cm linecode=PvEvLine Bus1=CA746RES20 Bus2=EVRES20
-New line.LINE_EV21 phases=2 length=30 units=cm linecode=PvEvLine Bus1=CA746RES21 Bus2=EVRES21
-New line.LINE_EV22 phases=2 length=30 units=cm linecode=PvEvLine Bus1=CA746RES22 Bus2=EVRES22
-New line.LINE_EV23 phases=2 length=30 units=cm linecode=PvEvLine Bus1=CA746RES23 Bus2=EVRES23
-New line.LINE_EV24 phases=2 length=30 units=cm linecode=PvEvLine Bus1=CA746RES24 Bus2=EVRES24
-New line.LINE_EV25 phases=2 length=30 units=cm linecode=PvEvLine Bus1=CA746RES25 Bus2=EVRES25
-New line.LINE_EV26 phases=2 length=30 units=cm linecode=PvEvLine Bus1=CA746RES26 Bus2=EVRES26
+New line.LINE_EV1 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES1 Bus2=EVRES1
+New line.LINE_EV2 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES2 Bus2=EVRES2
+New line.LINE_EV3 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES3 Bus2=EVRES3
+New line.LINE_EV4 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES4 Bus2=EVRES4
+New line.LINE_EV5 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES5 Bus2=EVRES5
+New line.LINE_EV6 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES6 Bus2=EVRES6
+New line.LINE_EV7 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES7 Bus2=EVRES7
+New line.LINE_EV8 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES8 Bus2=EVRES8
+New line.LINE_EV9 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES9 Bus2=EVRES9
+New line.LINE_EV10 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES10 Bus2=EVRES10
+New line.LINE_EV11 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES11 Bus2=EVRES11
+New line.LINE_EV12 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES12 Bus2=EVRES12
+New line.LINE_EV13 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES13 Bus2=EVRES13
+New line.LINE_EV14 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES14 Bus2=EVRES14
+New line.LINE_EV15 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES15 Bus2=EVRES15
+New line.LINE_EV16 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES16 Bus2=EVRES16
+New line.LINE_EV17 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES17 Bus2=EVRES17
+New line.LINE_EV18 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES18 Bus2=EVRES18
+New line.LINE_EV19 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES19 Bus2=EVRES19
+New line.LINE_EV20 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES20 Bus2=EVRES20
+New line.LINE_EV21 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES21 Bus2=EVRES21
+New line.LINE_EV22 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES22 Bus2=EVRES22
+New line.LINE_EV23 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES23 Bus2=EVRES23
+New line.LINE_EV24 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES24 Bus2=EVRES24
+New line.LINE_EV25 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES25 Bus2=EVRES25
+New line.LINE_EV26 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES26 Bus2=EVRES26
 
 !-----------------------------------------------------PV Lines----------------------------------------------------------xzNew line.LINE_EV1 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES1 Bus2=EVRES1
 
@@ -489,6 +489,7 @@ New Load.cargagr  phases=3 bus1=CA746GR     kv=0.220  kw=0.500   pf=0.92 model=1
 
 !------------------------------------- Residential Loads ---------------------------------------------------------------
 
+
 New Load.residence1   phases=3 bus1=CA746RES1   kV=0.220  kW=2.500     pf=0.92 model=1 conn=wye status=variable daily=RES-Type4-WE
 New Load.residence2   phases=3 bus1=CA746RES2   kV=0.220  kW=3.024   pf=0.92 model=1 conn=wye status=variable daily=RES-Type2-WE
 New Load.residence3   phases=3 bus1=CA746RES3   kV=0.220  kW=2.604   pf=0.92 model=1 conn=wye status=variable daily=RES-Type3-WE
@@ -557,7 +558,7 @@ New Storage.ev_4 bus1=CA746RES4.1.3 phases=2 kV=0.220 kWhrated=24 pf=0.95 kW=4.0
 New Storage.ev_5 bus1=CA746RES5.2.3 phases=2 kV=0.220 kWhrated=24 pf=0.95 kW=4.0 conn=delta daily=shape_ev_5 dispmode=follow
 New Storage.ev_6 bus1=CA746RES6.1.2 phases=2 kV=0.220 kWhrated=24 pf=0.95 kW=4.0 conn=delta daily=shape_ev_6 dispmode=follow
 New Storage.ev_7 bus1=CA746RES7.1.3 phases=2 kV=0.220 kWhrated=24 pf=0.95 kW=4.0 conn=delta daily=shape_ev_7 dispmode=follow
-New Storage.ev_8 bus1=CA746RES8.2.3 phases=2 kV=0.220 kWhrated=24 pf=0.95 kW=4.0 conn=delta daily=shape_ev_8 dispmode=follow
+New Storage.ev_8 bus1=CA746RES8.2.3 phases=2 kV=0.220 kWhrated=24 pf=0.95 kW=4.0 conn=delta dailyCA746RES1=shape_ev_8 dispmode=follow
 New Storage.ev_9 bus1=CA746RES9.2.3 phases=2 kV=0.220 kWhrated=24 pf=0.95 kW=4.0 conn=delta daily=shape_ev_9 dispmode=follow
 New Storage.ev_10 bus1=CA746RES10.1.3 phases=2 kV=0.220 kWhrated=24 pf=0.95 kW=4.0 conn=delta daily=shape_ev_10 dispmode=follow
 New Storage.ev_11 bus1=CA746RES11.2.3 phases=2 kV=0.220 kWhrated=24 pf=0.95 kW=4.0 conn=delta daily=shape_ev_11 dispmode=follow
@@ -616,9 +617,12 @@ New PVSystem.pv_26 bus1=CA746RES26.3.1 phases=2 conn=delta  kV=0.220  kVA=30 pmp
 
 
 !------------------Meters and Monitors-----------------
-
+*/
 New Monitor.residence_1_voltages element=Load.residence1 terminal=1 mode=0
 New Monitor.residence_1_powers element=Load.residence1 terminal=1 mode=1 ppolar=no
+
+New Monitor.residence_2_voltages element=Load.residence2 terminal=1 mode=0
+
 New energymeter.busbar element=transformer.CA746   terminal=1
 
 !-------------------------------------------------- Definitions and solve ---------------------------------------------------------------
@@ -640,4 +644,3 @@ Export Monitors residence_1_voltages
 Export Monitors residence_1_powers
 
 Plot monitor object= residence_1_voltages channels=(1 3 5 )
-*/
