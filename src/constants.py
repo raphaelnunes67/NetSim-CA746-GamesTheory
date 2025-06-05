@@ -53,6 +53,15 @@ class ColumnsMapVoltages(Enum):
     V1 = 1
     V2 = 3
     V3 = 5
+    
+class ColumnsMapPowers(Enum):
+    P1 = 1
+    Q1 = 2
+    P2 = 3
+    Q2 = 4
+    P3 = 5
+    Q3 = 6
+    
 
 
 ordered_labels = [" ",
@@ -65,8 +74,6 @@ ordered_labels = [" ",
                   ]
 
 control_modes = ['no_control', 'voltvar', 'voltwatt']
-
-target_residences = (1, 14)
 
 voltages_limits = (110, 117, 127, 133, 135)
 voltages_limits_pu = (0.866141, 0.921259, 1, 1.047244, 1.062992)
