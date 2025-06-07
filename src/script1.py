@@ -37,7 +37,7 @@ if __name__ == '__main__':
     total_loads = len(dss.Loads.AllNames())
     dss.Loads.First()
     n_res = 1
-    for i in range(total_loads):
+    for _ in range(total_loads):
       if dss.Loads.Name().find("residence") != -1:
         # Modifica todas as cargas das residências para 2.5kW
         dss.Loads.kW(2.5)
@@ -46,20 +46,20 @@ if __name__ == '__main__':
       
         phase_a, phase_b = random.choice([(1, 2)])
         dss.Text.Command(
-          f'New Storage.ev_{i} bus1=EVRES{i}.{phase_a}.{phase_b} phases=2 kV=0.220 kWhrated=40 ' 
+          f'New Storage.ev_{n_res} bus1=EVRES{n_res}.{phase_a}.{phase_b} phases=2 kV=0.220 kWhrated=40 ' 
           f'pf=0.95 kW=10 conn=delta daily=shape_ev_1 dispmode=FOLLOW %stored=0 '
           'kvarmax=0.44 kvarmaxabs=0.44 model=1 State=CHARGING %reserve=100 '
           '%Discharge=0 TimeChargeTrig=0 %Charge=100 '
         )
         if control_mode:
           dss.Text.Command(
-            f'New InvControl.control_voltwatt_{i} mode=voltwatt '
+            f'New InvControl.control_voltwatt_{n_res} mode=voltwatt '
             'voltage_curvex_ref=rated voltwatt_curve=vw_curve_ev '
-            'voltwattYaxis=PAVAILABLEPU voltageChangeTolerance=0.001 '
+            'voltageChangeTolerance=0.001 '
             'activePChangeTolerance=0.001 deltaP_factor=0.1 eventLog=true '
             'enabled=true voltwattCH_curve=vw_curve_ev monVoltageCalc=MAX '
             'RiseFallLimit=-1 '
-            f'DERlist=(Storage.ev_{i})'
+            f'DERlist=(Storage.ev_{n_res})'
           )
         if n_res in target_residences:
           
@@ -121,8 +121,7 @@ if __name__ == '__main__':
         
         for id in target_residences:
             if (dss.Monitors.Name().find('residence'+str(id)+'_') != -1):
-              dss.Monitors.Show()
-              print(dss.Monitors.AsMatrix())
+              # dss.Monitors.Show()
               x_values = list(range(len(dss.Monitors.Channel(ColumnsMapPowers.P1.value))))
               plotter.set_data(
                   x_values, 

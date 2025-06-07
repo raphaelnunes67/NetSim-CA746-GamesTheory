@@ -59,7 +59,7 @@ class EvPlotter:
 
 
 if __name__ == '__main__':
-    column = 1
+    column = 2
     plotter = EvPlotter('../data/electrical_vehicles/ev_shapes_charge.csv', column)
     plotter.set_title(f'Amostra {column}')
     plotter.set_axis_name(y_name='Valor', x_name='Tempo (s)')
