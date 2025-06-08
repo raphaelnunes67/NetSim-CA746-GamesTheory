@@ -1,5 +1,3 @@
-import random
-
 import matplotlib.pyplot as plt
 import pandas as pd
 from pathlib import Path
@@ -59,7 +57,7 @@ class EvPlotter:
 
 
 if __name__ == '__main__':
-    column = 2
+    column = 1
     plotter = EvPlotter('../data/electrical_vehicles/ev_shapes_charge.csv', column)
     plotter.set_title(f'Amostra {column}')
     plotter.set_axis_name(y_name='Valor', x_name='Tempo (s)')

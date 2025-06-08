@@ -1,4 +1,7 @@
 import matplotlib.pyplot as plt
+import os
+
+
 class Plotter:
     def __init__(self):
         
@@ -9,9 +12,14 @@ class Plotter:
         self.x_values = None
         self.y_values = []
         self.labels = dict()
+        self.folder_path='./'
 
     def reset_data(self):
         self.__init__()
+    
+    def set_images_folder_path(self, path):
+        self.folder_path=path
+        os.makedirs(name=self.folder_path, exist_ok=True)
         
     def set_data(self, x_values, y_values_list, labels=None):
         """Set the x values and list of y values for plotting"""
@@ -93,7 +101,7 @@ class Plotter:
 
     def save_figure(self, figure_name, dpi=300):
         """Save the figure to a file"""
-        self.plt.savefig(figure_name, dpi=dpi)
+        self.plt.savefig(os.path.join(self.folder_path, figure_name), dpi=dpi)
         self.close_figure()
 
 

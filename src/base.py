@@ -6,9 +6,9 @@ import csv
 
 
 if __name__ == '__main__':
-  
   control_modes = ('vw', '')
-  target_residences = (1, 14, 24)
+  target_residences = (1, 4, 14, 20, 24)
+  target_residence_ve = 24
   
   for control_mode in control_modes:
     dss.NewContext()
@@ -31,7 +31,7 @@ if __name__ == '__main__':
 
     # Insere a curva VW para os VEs
     dss.Text.Command('New XyCurve.vw_curve_ev npts=4 Yarray=(0.0, 0.0, 1.0, 1.0) Xarray=(0.0, 0.866141, 0.921259, 1.0)')
-    
+    # dss.Text.Command('New XyCurve.vw_curve_ev npts=4 Yarray=(0.0, 0.0, 1.0, 1.0) Xarray=(0.0, 1.0, 1.0, 1.0)')
     # Modifica todos os valores das residencias, adiciona medidores e 
     # veiculos elétricos
     total_loads = len(dss.Loads.AllNames())
@@ -43,22 +43,22 @@ if __name__ == '__main__':
         dss.Loads.kW(2.5)
         # Aplica o mesmo loadshape para todos as residencias
         dss.Loads.Daily('RES-Type1-WE')
-      
+        # if n_res == target_residence_ve:
         phase_a, phase_b = random.choice([(1, 2)])
         dss.Text.Command(
-          f'New Storage.ev_{n_res} bus1=EVRES{n_res}.{phase_a}.{phase_b} phases=2 kV=0.220 kWhrated=40 ' 
-          f'pf=0.95 kW=10 conn=delta daily=shape_ev_1 dispmode=FOLLOW %stored=0 '
-          'kvarmax=0.44 kvarmaxabs=0.44 model=1 State=CHARGING %reserve=100 '
-          '%Discharge=0 TimeChargeTrig=0 %Charge=100 '
+          f'New Storage.ev_{n_res} bus1=EVRES{n_res}.{phase_a}.{phase_b} phases=2 kV=0.220 kWhrated=40 kWhstored=0 ' 
+          f'pf=0.95 kW=24 kWrated=12 conn=delta daily=shape_ev_1 dispmode=FOLLOW %stored=0 '
+          'model=1 State=CHARGING %reserve=100 %EffCharge=100 '
+          '%Discharge=0 TimeChargeTrig=0 %Charge=100'
         )
         if control_mode:
           dss.Text.Command(
             f'New InvControl.control_voltwatt_{n_res} mode=voltwatt '
-            'voltage_curvex_ref=rated voltwatt_curve=vw_curve_ev '
-            'voltageChangeTolerance=0.001 '
-            'activePChangeTolerance=0.001 deltaP_factor=0.1 eventLog=true '
+            'voltage_curvex_ref=rated '
+            'voltageChangeTolerance=0.01 '
+            'activePChangeTolerance=0.01 deltaP_factor=0.1 '
             'enabled=true voltwattCH_curve=vw_curve_ev monVoltageCalc=MAX '
-            'RiseFallLimit=-1 '
+            'RiseFallLimit=-1 voltwattYaxis=PMPPPU '
             f'DERlist=(Storage.ev_{n_res})'
           )
         if n_res in target_residences:
@@ -97,27 +97,28 @@ if __name__ == '__main__':
     total_monitors = len(dss.Monitors.AllNames())
     dss.Monitors.First()
     plotter = Plotter()
+    plotter.set_images_folder_path('./imgs')
     
     for i in range(total_monitors):
-      # if (dss.Monitors.Name().find('voltages') != -1):
+      if (dss.Monitors.Name().find('voltages') != -1):
         
-      #   for id in target_residences:
-      #     if (dss.Monitors.Name().find('residence'+str(id)+'_') != -1):
-      #       dss.Monitors.Show()
-      #       x_values = list(range(len(dss.Monitors.Channel(ColumnsMapVoltages.V1.value))))
-      #       plotter.set_data(
-      #         x_values, 
-      #         [list(dss.Monitors.Channel(ColumnsMapVoltages.V1.value)), 
-      #         list(dss.Monitors.Channel(ColumnsMapVoltages.V2.value)),
-      #         list(dss.Monitors.Channel(ColumnsMapVoltages.V3.value))],
-      #         {0: "V1", 1: "V2", 2: "V3"}           
-      #       )
-      #       plotter.perform_plot()
-      #       plotter.configure_output(show_grid=True)
-      #       figure_name = dss.Monitors.Name() if not control_mode else dss.Monitors.Name() + '_' + control_mode
-      #       plotter.save_figure(figure_name=figure_name)
+        for id in target_residences:
+          if (dss.Monitors.Name().find('residence'+str(id)+'_') != -1):
+            # dss.Monitors.Show()
+            x_values = list(range(len(dss.Monitors.Channel(ColumnsMapVoltages.V1.value))))
+            plotter.set_data(
+              x_values, 
+              [list(dss.Monitors.Channel(ColumnsMapVoltages.V1.value)), 
+              list(dss.Monitors.Channel(ColumnsMapVoltages.V2.value)),
+              list(dss.Monitors.Channel(ColumnsMapVoltages.V3.value))],
+              {0: "V1", 1: "V2", 2: "V3"}           
+            )
+            plotter.perform_plot()
+            plotter.configure_output(show_grid=True)
+            figure_name = dss.Monitors.Name() if not control_mode else dss.Monitors.Name() + '_' + control_mode
+            plotter.save_figure(figure_name=figure_name)
       
-      if (dss.Monitors.Name().find('powers') != -1):
+      elif (dss.Monitors.Name().find('powers') != -1):
         
         for id in target_residences:
             if (dss.Monitors.Name().find('residence'+str(id)+'_') != -1):
@@ -139,9 +140,9 @@ if __name__ == '__main__':
     total = len(dss.Meters.AllNames())
     dss.Meters.First()
     for _ in range(total):
-      print(f'{dss.Meters.Name()}: {dss.Meters.RegisterValues()[0]}')
+      print(f'{dss.Meters.Name()}: {dss.Meters.RegisterValues()[0]} kWh')
+      
       dss.Meters.Next()
-
       
   
   
