@@ -84,16 +84,27 @@ if __name__ == '__main__':
         
       dss.Loads.Next()
         
-    # Resolve o circuito
     dss.Text.Command('Calcvoltagebases')
-    dss.Text.Command('Set mode=daily')
-    dss.Text.Command('Set stepsize=1m')
-    dss.Text.Command('Set number=1440')
     dss.Text.Command('Set maxcontroliter=1000')
     dss.Text.Command('Set maxiterations=1000')
     dss.Text.Command('Set controlmode=time')
-    dss.Solution.Solve()
-      
+    
+    # Resolve o circuito 
+    dss.Text.Command('Set mode=daily')
+    dss.Text.Command('Set stepsize=1m')
+    dss.Text.Command('Set number=1')
+    
+    n_steps = 1440  # 24 horas, 1 minuto cada
+    for i in range(n_steps):
+      # if i == 900:
+      #   dss.XYCurves.First()
+      #   dss.XYCurves.Next()
+      #   dss.XYCurves.Next()
+      #   dss.XYCurves.Next()
+      #   dss.XYCurves.YArray([0.0, 0.92, 0.96, 1.0])
+        # print(dss.XYCurves.YArray())
+      dss.Solution.Solve()
+
     total_monitors = len(dss.Monitors.AllNames())
     dss.Monitors.First()
     plotter = Plotter()
@@ -104,7 +115,6 @@ if __name__ == '__main__':
         
         for id in target_residences:
           if (dss.Monitors.Name().find('residence'+str(id)+'_') != -1):
-            # dss.Monitors.Show()
             x_values = list(range(len(dss.Monitors.Channel(ColumnsMapVoltages.V1.value))))
             plotter.set_data(
               x_values, 
