@@ -101,8 +101,8 @@ def calculate_shapley_values(coalition_values, players, player):
   return sum(contributions) / len(contributions)
 
 if __name__ == '__main__':
-  # get_all_contributions()
-  
+  get_all_contributions()
+  # exit()
   dss.NewContext()
   dss.Text.Command('Redirect ../dss/CA746.dss')
   
@@ -204,15 +204,15 @@ if __name__ == '__main__':
         interval = interval / 10
 
     # Print dos grupos de valores
-    print("last_bin_values (valores dos jogadores em cada grupo):")
-    print(last_bin_values)
-    print("last_bin_indexes (índices dos jogadores em cada grupo):")
-    print(last_bin_indexes)
+    # print("last_bin_values (valores dos jogadores em cada grupo):")
+    # print(last_bin_values)
+    # print("last_bin_indexes (índices dos jogadores em cada grupo):")
+    # print(last_bin_indexes)
 
     # Média dos valores em cada grupo
     bins_average = {group: sum(vals) / len(vals) for group, vals in last_bin_values.items()}
-    print("bins_average (média dos valores em cada grupo):")
-    print(bins_average)
+    # print("bins_average (média dos valores em cada grupo):")
+    # print(bins_average)
 
     # Preparação para cálculo do Shapley
     players = list(bins_average)
@@ -223,24 +223,29 @@ if __name__ == '__main__':
 
     # Cálculo dos valores de Shapley para cada grupo
     shapley_dict = {player: calculate_shapley_values(coalition_values, players, player) for player in players}
-    print("shapley_dict (valor de Shapley de cada grupo):")
-    print(shapley_dict)
+    # print("shapley_dict (valor de Shapley de cada grupo):")
+    # print(shapley_dict)
 
     # Normalização: menor valor vira 1.0, os outros caem proporcionalmente
     min_shapley = min(shapley_dict.values())
     normalized_shapley = {player: min_shapley / value for player, value in shapley_dict.items()}
-    print("normalized_shapley (valores de Shapley normalizados):")
-    print(normalized_shapley)
+    # print("normalized_shapley (valores de Shapley normalizados):")
+    # print(normalized_shapley)
     
     # Novo dicionário: grupos de jogadores como chave, valor normalizado de Shapley como valor
     new_dict = {tuple(last_bin_indexes[k]): normalized_shapley[k] for k in last_bin_indexes}
-    print("new_dict (grupos de jogadores -> valor de Shapley normalizado):")
-    print(new_dict)
+    # print("new_dict (grupos de jogadores -> valor de Shapley normalizado):")
+    # print(new_dict)
     
     # Atualização das curvas VW
-    dss.XYCurves.First()
     for group in new_dict.keys():
+      dss.XYCurves.First()
       for id in (1, dss.XYCurves.Count() + 1):
-         if id in group:
-           dss.XYCurves.YArray([0.0, 0.0, new_dict[group], new_dict[group]])
+        if id in group:
+          dss.XYCurves.YArray([0.0, 0.0, new_dict[group], new_dict[group]])
+        
+        print(dss.XYCurves.Name())
+        
+        dss.XYCurves.Next()
+    exit()
     
