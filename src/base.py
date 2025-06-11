@@ -13,7 +13,7 @@ if __name__ == '__main__':
   for control_mode in control_modes:
     dss.NewContext()
     # Carrega o arquivo base
-    dss.Text.Command(f'Redirect ../dss/CA746.dss')
+    dss.Text.Command('Redirect ../dss/CA746.dss')
     
     # Insere a curva de carga do VE
     column_index = 1
@@ -34,10 +34,10 @@ if __name__ == '__main__':
     # dss.Text.Command('New XyCurve.vw_curve_ev npts=4 Yarray=(0.0, 0.0, 1.0, 1.0) Xarray=(0.0, 1.0, 1.0, 1.0)')
     # Modifica todos os valores das residencias, adiciona medidores e 
     # veiculos elétricos
-    total_loads = len(dss.Loads.AllNames())
+    
     dss.Loads.First()
     n_res = 1
-    for _ in range(total_loads):
+    for _ in range(dss.Loads.Count()):
       if dss.Loads.Name().find("residence") != -1:
         # Modifica todas as cargas das residências para 2.5kW
         dss.Loads.kW(2.5)
@@ -45,6 +45,8 @@ if __name__ == '__main__':
         dss.Loads.Daily('RES-Type1-WE')
         # if n_res == target_residence_ve:
         phase_a, phase_b = random.choice([(1, 2)])
+        
+        # Insere o VE
         dss.Text.Command(
           f'New Storage.ev_{n_res} bus1=EVRES{n_res}.{phase_a}.{phase_b} phases=2 kV=0.220 kWhrated=40 kWhstored=0 ' 
           f'pf=0.95 kW=24 kWrated=12 conn=delta daily=shape_ev_1 dispmode=FOLLOW %stored=0 '
@@ -81,7 +83,6 @@ if __name__ == '__main__':
             f'element=line.LINE_EV{n_res} terminal=1'
           )
         n_res += 1
-        
       dss.Loads.Next()
         
     dss.Text.Command('Calcvoltagebases')
@@ -102,8 +103,16 @@ if __name__ == '__main__':
       #   dss.XYCurves.Next()
       #   dss.XYCurves.Next()
       #   dss.XYCurves.YArray([0.0, 0.92, 0.96, 1.0])
-        # print(dss.XYCurves.YArray())
+      #   print(dss.XYCurves.YArray())
       dss.Solution.Solve()
+      # # Obter os dados de energia por minuto
+      # total = len(dss.Meters.AllNames())
+      # dss.Meters.First()
+      # for _ in range(total):
+      #   if dss.Meters.Name().find('24') != -1:
+      #     print(f'{dss.Meters.Name()}: {dss.Meters.RegisterValues()[0]} kWh')
+
+      #   dss.Meters.Next()
 
     total_monitors = len(dss.Monitors.AllNames())
     dss.Monitors.First()

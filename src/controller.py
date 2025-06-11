@@ -32,23 +32,23 @@ class Controller:
   
 if __name__ == '__main__':
   
-  # coalition_values = {
-  #   frozenset(): 0,
-  #   frozenset("A"): 80,
-  #   frozenset("B"): 56,
-  #   frozenset("C"): 70,
-  #   frozenset(("A", "B")): 80,
-  #   frozenset(("A", "C")): 85,
-  #   frozenset(("B", "C")): 72,
-  #   frozenset(("A", "B", "C")): 90
-  # }
+  coalition_values = {
+    frozenset(): 0,
+    frozenset("A"): 80,
+    frozenset("B"): 56,
+    frozenset("C"): 70,
+    frozenset(("A", "B")): 80,
+    frozenset(("A", "C")): 85,
+    frozenset(("B", "C")): 72,
+    frozenset(("A", "B", "C")): 90
+  }
   
-  # for player in ("A", "B", "C"):
-  #   print(player, Controller.calculate_shapley_values(coalition_values, player))
+  for player in ("A", "B", "C"):
+    print(player, Controller.calculate_shapley_values(coalition_values, player))
   
   
-  possible_combinations = Controller.get_combinations(['R1', 'R2', 'R3', 'R4', 'R5', 'R6'])
+  # possible_combinations = Controller.get_combinations(['R1', 'R2', 'R3', 'R4', 'R5', 'R6'])
   
-  possible_combinations_formatted = json.dumps(possible_combinations, indent=2)
+  # possible_combinations_formatted = json.dumps(possible_combinations, indent=2)
 
-  print(len(possible_combinations_formatted))
+  # print(possible_combinations_formatted)
