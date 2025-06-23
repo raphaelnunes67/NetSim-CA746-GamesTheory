@@ -387,59 +387,59 @@ new line.1743048 Geometry=RAMAL2 Length=0.01270 Units=km Bus1=C00644014 Bus2=CA7
 !-----------------------------------------------------EV Lines----------------------------------------------------------
 
 New line.LINE_EV1 phases=2 length=30 units=cm linecode=PvEvLine Bus1=CA746RES1 Bus2=EVRES1
-New line.LINE_EV2 phases=2 length=30 units=cm linecode=PvEvLine Bus1=CA746RES2 Bus2=EVRES2
-New line.LINE_EV3 phases=2 length=30 units=cm linecode=PvEvLine Bus1=CA746RES3 Bus2=EVRES3
-New line.LINE_EV4 phases=2 length=30 units=cm linecode=PvEvLine Bus1=CA746RES4 Bus2=EVRES4
-New line.LINE_EV5 phases=2 length=30 units=cm linecode=PvEvLine Bus1=CA746RES5 Bus2=EVRES5
-New line.LINE_EV6 phases=2 length=30 units=cm linecode=PvEvLine Bus1=CA746RES6 Bus2=EVRES6
-New line.LINE_EV7 phases=2 length=30 units=cm linecode=PvEvLine Bus1=CA746RES7 Bus2=EVRES7
-New line.LINE_EV8 phases=2 length=30 units=cm linecode=PvEvLine Bus1=CA746RES8 Bus2=EVRES8
-New line.LINE_EV9 phases=2 length=30 units=cm linecode=PvEvLine Bus1=CA746RES9 Bus2=EVRES9
-New line.LINE_EV10 phases=2 length=30 units=cm linecode=PvEvLine Bus1=CA746RES10 Bus2=EVRES10
-New line.LINE_EV11 phases=2 length=30 units=cm linecode=PvEvLine Bus1=CA746RES11 Bus2=EVRES11
-New line.LINE_EV12 phases=2 length=30 units=cm linecode=PvEvLine Bus1=CA746RES12 Bus2=EVRES12
-New line.LINE_EV13 phases=2 length=30 units=cm linecode=PvEvLine Bus1=CA746RES13 Bus2=EVRES13
+// New line.LINE_EV2 phases=2 length=30 units=cm linecode=PvEvLine Bus1=CA746RES2 Bus2=EVRES2
+// New line.LINE_EV3 phases=2 length=30 units=cm linecode=PvEvLine Bus1=CA746RES3 Bus2=EVRES3
+// New line.LINE_EV4 phases=2 length=30 units=cm linecode=PvEvLine Bus1=CA746RES4 Bus2=EVRES4
+// New line.LINE_EV5 phases=2 length=30 units=cm linecode=PvEvLine Bus1=CA746RES5 Bus2=EVRES5
+// New line.LINE_EV6 phases=2 length=30 units=cm linecode=PvEvLine Bus1=CA746RES6 Bus2=EVRES6
+// New line.LINE_EV7 phases=2 length=30 units=cm linecode=PvEvLine Bus1=CA746RES7 Bus2=EVRES7
+// New line.LINE_EV8 phases=2 length=30 units=cm linecode=PvEvLine Bus1=CA746RES8 Bus2=EVRES8
+// New line.LINE_EV9 phases=2 length=30 units=cm linecode=PvEvLine Bus1=CA746RES9 Bus2=EVRES9
+// New line.LINE_EV10 phases=2 length=30 units=cm linecode=PvEvLine Bus1=CA746RES10 Bus2=EVRES10
+// New line.LINE_EV11 phases=2 length=30 units=cm linecode=PvEvLine Bus1=CA746RES11 Bus2=EVRES11
+// New line.LINE_EV12 phases=2 length=30 units=cm linecode=PvEvLine Bus1=CA746RES12 Bus2=EVRES12
+// New line.LINE_EV13 phases=2 length=30 units=cm linecode=PvEvLine Bus1=CA746RES13 Bus2=EVRES13
 New line.LINE_EV14 phases=2 length=30 units=cm linecode=PvEvLine Bus1=CA746RES14 Bus2=EVRES14
-New line.LINE_EV15 phases=2 length=30 units=cm linecode=PvEvLine Bus1=CA746RES15 Bus2=EVRES15
-New line.LINE_EV16 phases=2 length=30 units=cm linecode=PvEvLine Bus1=CA746RES16 Bus2=EVRES16
-New line.LINE_EV17 phases=2 length=30 units=cm linecode=PvEvLine Bus1=CA746RES17 Bus2=EVRES17
+// New line.LINE_EV15 phases=2 length=30 units=cm linecode=PvEvLine Bus1=CA746RES15 Bus2=EVRES15
+// New line.LINE_EV16 phases=2 length=30 units=cm linecode=PvEvLine Bus1=CA746RES16 Bus2=EVRES16
+// New line.LINE_EV17 phases=2 length=30 units=cm linecode=PvEvLine Bus1=CA746RES17 Bus2=EVRES17
 New line.LINE_EV18 phases=2 length=30 units=cm linecode=PvEvLine Bus1=CA746RES18 Bus2=EVRES18
 New line.LINE_EV19 phases=2 length=30 units=cm linecode=PvEvLine Bus1=CA746RES19 Bus2=EVRES19
-New line.LINE_EV20 phases=2 length=30 units=cm linecode=PvEvLine Bus1=CA746RES20 Bus2=EVRES20
-New line.LINE_EV21 phases=2 length=30 units=cm linecode=PvEvLine Bus1=CA746RES21 Bus2=EVRES21
-New line.LINE_EV22 phases=2 length=30 units=cm linecode=PvEvLine Bus1=CA746RES22 Bus2=EVRES22
-New line.LINE_EV23 phases=2 length=30 units=cm linecode=PvEvLine Bus1=CA746RES23 Bus2=EVRES23
+// New line.LINE_EV20 phases=2 length=30 units=cm linecode=PvEvLine Bus1=CA746RES20 Bus2=EVRES20
+// New line.LINE_EV21 phases=2 length=30 units=cm linecode=PvEvLine Bus1=CA746RES21 Bus2=EVRES21
+// New line.LINE_EV22 phases=2 length=30 units=cm linecode=PvEvLine Bus1=CA746RES22 Bus2=EVRES22
+// New line.LINE_EV23 phases=2 length=30 units=cm linecode=PvEvLine Bus1=CA746RES23 Bus2=EVRES23
 New line.LINE_EV24 phases=2 length=30 units=cm linecode=PvEvLine Bus1=CA746RES24 Bus2=EVRES24
-New line.LINE_EV25 phases=2 length=30 units=cm linecode=PvEvLine Bus1=CA746RES25 Bus2=EVRES25
+// New line.LINE_EV25 phases=2 length=30 units=cm linecode=PvEvLine Bus1=CA746RES25 Bus2=EVRES25
 New line.LINE_EV26 phases=2 length=30 units=cm linecode=PvEvLine Bus1=CA746RES26 Bus2=EVRES26
 
 !-----------------------------------------------------PV Lines----------------------------------------------------------
 
 New line.LINE_PV1 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES1 Bus2=PVRES1
-New line.LINE_PV2 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES2 Bus2=PVRES2
-New line.LINE_PV3 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES3 Bus2=PVRES3
-New line.LINE_PV4 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES4 Bus2=PVRES4
-New line.LINE_PV5 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES5 Bus2=PVRES5
-New line.LINE_PV6 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES6 Bus2=PVRES6
-New line.LINE_PV7 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES7 Bus2=PVRES7
-New line.LINE_PV8 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES8 Bus2=PVRES8
-New line.LINE_PV9 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES9 Bus2=PVRES9
-New line.LINE_PV10 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES10 Bus2=PVRES10
-New line.LINE_PV11 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES11 Bus2=PVRES11
-New line.LINE_PV12 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES12 Bus2=PVRES12
-New line.LINE_PV13 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES13 Bus2=PVRES13
+// New line.LINE_PV2 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES2 Bus2=PVRES2
+// New line.LINE_PV3 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES3 Bus2=PVRES3
+// New line.LINE_PV4 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES4 Bus2=PVRES4
+// New line.LINE_PV5 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES5 Bus2=PVRES5
+// New line.LINE_PV6 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES6 Bus2=PVRES6
+// New line.LINE_PV7 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES7 Bus2=PVRES7
+// New line.LINE_PV8 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES8 Bus2=PVRES8
+// New line.LINE_PV9 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES9 Bus2=PVRES9
+// New line.LINE_PV10 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES10 Bus2=PVRES10
+// New line.LINE_PV11 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES11 Bus2=PVRES11
+// New line.LINE_PV12 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES12 Bus2=PVRES12
+// New line.LINE_PV13 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES13 Bus2=PVRES13
 New line.LINE_PV14 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES14 Bus2=PVRES14
-New line.LINE_PV15 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES15 Bus2=PVRES15
-New line.LINE_PV16 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES16 Bus2=PVRES16
-New line.LINE_PV17 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES17 Bus2=PVRES17
+// New line.LINE_PV15 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES15 Bus2=PVRES15
+// New line.LINE_PV16 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES16 Bus2=PVRES16
+// New line.LINE_PV17 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES17 Bus2=PVRES17
 New line.LINE_PV18 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES18 Bus2=PVRES18
 New line.LINE_PV19 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES19 Bus2=PVRES19
-New line.LINE_PV20 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES20 Bus2=PVRES20
-New line.LINE_PV21 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES21 Bus2=PVRES21
-New line.LINE_PV22 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES22 Bus2=PVRES22
-New line.LINE_PV23 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES23 Bus2=PVRES23
+// New line.LINE_PV20 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES20 Bus2=PVRES20
+// New line.LINE_PV21 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES21 Bus2=PVRES21
+// New line.LINE_PV22 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES22 Bus2=PVRES22
+// New line.LINE_PV23 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES23 Bus2=PVRES23
 New line.LINE_PV24 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES24 Bus2=PVRES24
-New line.LINE_PV25 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES25 Bus2=PVRES25
+// New line.LINE_PV25 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES25 Bus2=PVRES25
 New line.LINE_PV26 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES26 Bus2=PVRES26
 
 !-------------- Tri-phase transformer --------------
@@ -447,7 +447,7 @@ New line.LINE_PV26 phases=3 length=30 units=cm linecode=PvEvLine Bus1=CA746RES26
 
 ! TRAFO DE 75KVA Pvazio=260W, Ptot=1260W, Z=3,5%
 new Transformer.CA746	phases=3	windings=2	xhl=3.070439708 taps=[ 1.0 1.0 ] ! 1.00/0.9565217391/0.9130434783- 1.043478261/1.086956522
-~ wdg=1 bus=MT1.1.2.3	conn=delta	kV=13.80	kVA=75 %r=0.84
+~ wdg=1 bus=MT1.1.2.3	conn=delta	kV=13.80	kVA=45 %r=0.84
 ~ wdg=2 bus=C17130410.1.2.3.0		conn=wye	kV=0.220	kVA=75 %r=0.84
 !---------------MFCR---------------
 
@@ -490,30 +490,30 @@ New Load.cargagr  phases=3 bus1=CA746GR     kv=0.220  kw=0.500   pf=0.92 model=1
 !------------------------------------- Residential Loads ---------------------------------------------------------------
 
 New Load.residence1   phases=3 bus1=CA746RES1   kV=0.220  kW=2.500     pf=0.92 model=1 conn=wye status=variable daily=RES-Type4-WE
-New Load.residence2   phases=3 bus1=CA746RES2   kV=0.220  kW=3.024   pf=0.92 model=1 conn=wye status=variable daily=RES-Type2-WE
-New Load.residence3   phases=3 bus1=CA746RES3   kV=0.220  kW=2.604   pf=0.92 model=1 conn=wye status=variable daily=RES-Type3-WE
-New Load.residence4   phases=3 bus1=CA746RES4   kV=0.220  kW=2.749  pf=0.92 model=1 conn=wye status=variable daily=RES-Type1-WE
-New Load.residence5   phases=3 bus1=CA746RES5   kV=0.220  kW=2.635   pf=0.92 model=1 conn=wye status=variable daily=RES-Type5-WE
-New Load.residence6   phases=3 bus1=CA746RES6   kV=0.220  kW=2.377   pf=0.92 model=1 conn=wye status=variable daily=RES-Type4-WE
-New Load.residence7   phases=3 bus1=CA746RES7   kV=0.220  kW=2.170   pf=0.92 model=1 conn=wye status=variable daily=RES-Type6-WE
-New Load.residence8   phases=3 bus1=CA746RES8   kV=0.220  kW=2.995   pf=0.92 model=1 conn=wye status=variable daily=RES-Type7-WE
-New Load.residence9   phases=3 bus1=CA746RES9   kV=0.220  kW=3.135   pf=0.92 model=1 conn=wye status=variable daily=RES-Type1-WE
-New Load.residence10  phases=3 bus1=CA746RES10  kV=0.220  kW=3.126   pf=0.92 model=1 conn=wye status=variable daily=RES-Type2-WE
-New Load.residence11  phases=3 bus1=CA746RES11  kV=0.220  kW=2.875   pf=0.92 model=1 conn=wye status=variable daily=RES-Type1-WE
-New Load.residence12  phases=3 bus1=CA746RES12  kV=0.220  kW=2.700   pf=0.92 model=1 conn=wye status=variable daily=RES-Type1-WE
-New Load.residence13  phases=3 bus1=CA746RES13  kV=0.220  kW=2.620   pf=0.92 model=1 conn=wye status=variable daily=RES-Type4-WE
+// New Load.residence2   phases=3 bus1=CA746RES2   kV=0.220  kW=3.024   pf=0.92 model=1 conn=wye status=variable daily=RES-Type2-WE
+// New Load.residence3   phases=3 bus1=CA746RES3   kV=0.220  kW=2.604   pf=0.92 model=1 conn=wye status=variable daily=RES-Type3-WE
+// New Load.residence4   phases=3 bus1=CA746RES4   kV=0.220  kW=2.749  pf=0.92 model=1 conn=wye status=variable daily=RES-Type1-WE
+// New Load.residence5   phases=3 bus1=CA746RES5   kV=0.220  kW=2.635   pf=0.92 model=1 conn=wye status=variable daily=RES-Type5-WE
+// New Load.residence6   phases=3 bus1=CA746RES6   kV=0.220  kW=2.377   pf=0.92 model=1 conn=wye status=variable daily=RES-Type4-WE
+// New Load.residence7   phases=3 bus1=CA746RES7   kV=0.220  kW=2.170   pf=0.92 model=1 conn=wye status=variable daily=RES-Type6-WE
+// New Load.residence8   phases=3 bus1=CA746RES8   kV=0.220  kW=2.995   pf=0.92 model=1 conn=wye status=variable daily=RES-Type7-WE
+// New Load.residence9   phases=3 bus1=CA746RES9   kV=0.220  kW=3.135   pf=0.92 model=1 conn=wye status=variable daily=RES-Type1-WE
+// New Load.residence10  phases=3 bus1=CA746RES10  kV=0.220  kW=3.126   pf=0.92 model=1 conn=wye status=variable daily=RES-Type2-WE
+// New Load.residence11  phases=3 bus1=CA746RES11  kV=0.220  kW=2.875   pf=0.92 model=1 conn=wye status=variable daily=RES-Type1-WE
+// New Load.residence12  phases=3 bus1=CA746RES12  kV=0.220  kW=2.700   pf=0.92 model=1 conn=wye status=variable daily=RES-Type1-WE
+// New Load.residence13  phases=3 bus1=CA746RES13  kV=0.220  kW=2.620   pf=0.92 model=1 conn=wye status=variable daily=RES-Type4-WE
 New Load.residence14  phases=3 bus1=CA746RES14  kV=0.220  kW=2.726   pf=0.92 model=1 conn=wye status=variable daily=RES-Type4-WE
-New Load.residence15  phases=3 bus1=CA746RES15  kV=0.220  kW=2.875   pf=0.92 model=1 conn=wye status=variable daily=RES-Type5-WE
-New Load.residence16  phases=3 bus1=CA746RES16  kV=0.220  kW=2.300   pf=0.92 model=1 conn=wye status=variable daily=RES-Type6-WE
-New Load.residence17  phases=3 bus1=CA746RES17  kV=0.220  kW=2.620   pf=0.92 model=1 conn=wye status=variable daily=RES-Type6-WE
+// New Load.residence15  phases=3 bus1=CA746RES15  kV=0.220  kW=2.875   pf=0.92 model=1 conn=wye status=variable daily=RES-Type5-WE
+// New Load.residence16  phases=3 bus1=CA746RES16  kV=0.220  kW=2.300   pf=0.92 model=1 conn=wye status=variable daily=RES-Type6-WE
+// New Load.residence17  phases=3 bus1=CA746RES17  kV=0.220  kW=2.620   pf=0.92 model=1 conn=wye status=variable daily=RES-Type6-WE
 New Load.residence18  phases=3 bus1=CA746RES18  kV=0.220  kW=2.726   pf=0.92 model=1 conn=wye status=variable daily=RES-Type8-WE
 New Load.residence19  phases=3 bus1=CA746RES19  kV=0.220  kW=2.875   pf=0.92 model=1 conn=wye status=variable daily=RES-Type9-WE
-New Load.residence20  phases=3 bus1=CA746RES20  kV=0.220  kW=2.817   pf=0.92 model=1 conn=wye status=variable daily=RES-Type1-WE
-New Load.residence21  phases=3 bus1=CA746RES21  kV=0.220  kW=3.620   pf=0.92 model=1 conn=wye status=variable daily=RES-Type2-WE
-New Load.residence22  phases=3 bus1=CA746RES22  kV=0.220  kW=3.726   pf=0.92 model=1 conn=wye status=variable daily=RES-Type3-WE
-New Load.residence23  phases=3 bus1=CA746RES23  kV=0.220  kW=3.875   pf=0.92 model=1 conn=wye status=variable daily=RES-Type3-WE
+// New Load.residence20  phases=3 bus1=CA746RES20  kV=0.220  kW=2.817   pf=0.92 model=1 conn=wye status=variable daily=RES-Type1-WE
+// New Load.residence21  phases=3 bus1=CA746RES21  kV=0.220  kW=3.620   pf=0.92 model=1 conn=wye status=variable daily=RES-Type2-WE
+// New Load.residence22  phases=3 bus1=CA746RES22  kV=0.220  kW=3.726   pf=0.92 model=1 conn=wye status=variable daily=RES-Type3-WE
+// New Load.residence23  phases=3 bus1=CA746RES23  kV=0.220  kW=3.875   pf=0.92 model=1 conn=wye status=variable daily=RES-Type3-WE
 New Load.residence24  phases=3 bus1=CA746RES24  kV=0.220  kW=2.800   pf=0.92 model=1 conn=wye status=variable daily=RES-Type6-WE
-New Load.residence25  phases=3 bus1=CA746RES25  kV=0.220  kW=2.620   pf=0.92 model=1 conn=wye status=variable daily=RES-Type7-WE
+// New Load.residence25  phases=3 bus1=CA746RES25  kV=0.220  kW=2.620   pf=0.92 model=1 conn=wye status=variable daily=RES-Type7-WE
 New Load.residence26  phases=3 bus1=CA746RES26  kV=0.220  kW=2.300   pf=0.92 model=1 conn=wye status=variable daily=RES-Type7-WE
 
 /*
