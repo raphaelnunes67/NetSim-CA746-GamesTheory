@@ -27,7 +27,7 @@ if __name__ == '__main__':
     dss.Text.Command(f'New Loadshape.shape_ev_1 npts=1440 minterval=1 mult=({column_values_str})')
 
     # Insere a curva para o VW para os PVs
-    dss.Text.Command('New XyCurve.vw_curve_pv npts=4 Yarray=(1.0, 1.0, 0.0, 0.0) Xarray=(0.0, 1.047244, 1.062992, 2.0)')
+    dss.Text.Command('New XyCurve.vw_curve_pv npts=4 Yarray=(1.0, 1.0, 0.0, 0.0) Xarray=(1.0, 1.047244, 1.062992, 2.0)')
 
     # Insere a curva VW para os VEs
     dss.Text.Command('New XyCurve.vw_curve_ev npts=4 Yarray=(0.0, 0.0, 1.0, 1.0) Xarray=(0.0, 0.866141, 0.921259, 1.0)')
