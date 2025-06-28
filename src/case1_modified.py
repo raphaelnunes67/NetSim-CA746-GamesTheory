@@ -192,7 +192,7 @@ if __name__ == '__main__':
   dss.NewContext()
   dss.Text.Command('Redirect ../dss/CA746_modified.dss')
   
-  # Preparação do ckt
+  # Preparação do CKT
   # Insere a curva de carga do VE
   column_index = 1
   column_data = []

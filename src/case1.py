@@ -25,39 +25,45 @@ def get_all_contributions():
   dss.Text.Command('New XyCurve.vw_curve_ev npts=4 Yarray=(0.0, 0.0, 1.0, 1.0) Xarray=(0.0, 0.866141, 0.921259, 1.0)')
   total_loads = len(dss.Loads.AllNames())
   dss.Loads.First()
-  n_res = 1
   for _ in range(total_loads):
+    
     if dss.Loads.Name().find("residence") != -1:
+      residence = dss.Loads.Name()
+      n_res = int(residence[residence.find("residence") + 9:])
       # Modifica todas as cargas das residências para 2.5kW
       dss.Loads.kW(2.5)
       # Aplica o mesmo loadshape para todas as residencias
       dss.Loads.Daily('RES-Type1-WE')
       phase_a, phase_b = (1, 2)
-      dss.Text.Command(
-        f'New Storage.ev_{n_res} bus1=EVRES{n_res}.{phase_a}.{phase_b} phases=2 kV=0.220 kWhrated=40 kWhstored=0 ' 
-        f'pf=0.95 kW=24 kWrated=12 conn=delta daily=shape_ev_1 dispmode=FOLLOW %stored=0 '
-        'model=1 State=CHARGING %reserve=100 %EffCharge=100 '
-        '%Discharge=0 TimeChargeTrig=0 %Charge=100'
-      ) 
+      # dss.Text.Command(
+      #   f'New Storage.ev_{n_res} bus1=EVRES{n_res}.{phase_a}.{phase_b} phases=2 kV=0.220 kWhrated=40 kWhstored=0 ' 
+      #   f'pf=0.95 kW=24 kWrated=12 conn=delta daily=shape_ev_1 dispmode=FOLLOW %stored=0 '
+      #   'model=1 State=CHARGING %reserve=100 %EffCharge=100 '
+      #   '%Discharge=0 TimeChargeTrig=0 %Charge=100'
+      # ) 
       
       # Adiciona o controle voltwatt
-      dss.Text.Command(
-        f'New InvControl.control_voltwatt_{n_res} mode=voltwatt '
-        'voltage_curvex_ref=rated '
-        'voltageChangeTolerance=0.01 '
-        'activePChangeTolerance=0.01 deltaP_factor=0.1 '
-        'enabled=true voltwattCH_curve=vw_curve_ev monVoltageCalc=MAX '
-        'RiseFallLimit=-1 voltwattYaxis=PMPPPU '
-        f'DERlist=(Storage.ev_{n_res})'
-      )
+      # dss.Text.Command(
+      #   f'New InvControl.control_voltwatt_{n_res} mode=voltwatt '
+      #   'voltage_curvex_ref=rated '
+      #   'voltageChangeTolerance=0.01 '
+      #   'activePChangeTolerance=0.01 deltaP_factor=0.1 '
+      #   'enabled=true voltwattCH_curve=vw_curve_ev monVoltageCalc=MAX '
+      #   'RiseFallLimit=-1 voltwattYaxis=PMPPPU '
+      #   f'DERlist=(Storage.ev_{n_res})'
+      # )
       
       # Adiciona o medidor
       meter_name = f'{dss.Loads.Name()}_meter'
+      # dss.Text.Command(
+      #   f'New EnergyMeter.{meter_name} '
+      #   f'element=line.LINE_EV{n_res} terminal=1'
+      # )
+      
       dss.Text.Command(
         f'New EnergyMeter.{meter_name} '
-        f'element=line.LINE_EV{n_res} terminal=1'
+        f'element=Bus.CA746RES{n_res} terminal=1'
       )
-      n_res += 1
     dss.Loads.Next()
       
   dss.Text.Command('Calcvoltagebases')
@@ -102,7 +108,7 @@ def calculate_shapley_values(coalition_values, players, player):
 
 if __name__ == '__main__':
   get_all_contributions()
-  # exit()
+  exit()
   dss.NewContext()
   dss.Text.Command('Redirect ../dss/CA746.dss')
   
@@ -119,9 +125,10 @@ if __name__ == '__main__':
   dss.Text.Command(f'New Loadshape.shape_ev_1 npts=1440 minterval=1 mult=({column_values_str})')
   
   dss.Loads.First()
-  n_res = 1
   for _ in range(dss.Loads.Count()):
     if dss.Loads.Name().find("residence") != -1:
+      residence = dss.Loads.Name()
+      n_res = int(residence[residence.find("residence") + 9:])
       # Modifica todas as cargas das residências para 2.5kW
       dss.Loads.kW(2.5)
       # Aplica o mesmo loadshape para todos as residencias
@@ -156,7 +163,6 @@ if __name__ == '__main__':
         f'New EnergyMeter.{meter_name} '
         f'element=line.LINE_EV{n_res} terminal=1'
       )
-      n_res += 1
     dss.Loads.Next()
     
   dss.Text.Command('Calcvoltagebases')

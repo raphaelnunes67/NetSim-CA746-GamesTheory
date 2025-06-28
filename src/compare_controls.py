@@ -10,9 +10,30 @@ from plotter import Plotter
 import random
 import csv
 
+LIMIT_UP_VOLTAGE_PU_PV = 1.062992
+LIMIT_DOWN_VOLTAGE_PU_PV = 1.047244
 
+
+def voltwatt_pv(v1: float, v2: float, v3: float, nominal_power_kw: float , limit_up_power: float = 1.0) -> float:
+  vmax = max(v1, v2, v3) / 127
+  
+  if (vmax >= LIMIT_UP_VOLTAGE_PU_PV):
+    return 0.0
+  elif (vmax <= LIMIT_DOWN_VOLTAGE_PU_PV):
+    return nominal_power_kw
+  else:
+    
+    angular_coef = limit_up_power / (LIMIT_DOWN_VOLTAGE_PU_PV - LIMIT_UP_VOLTAGE_PU_PV)
+    linear_coef = limit_up_power - angular_coef * LIMIT_DOWN_VOLTAGE_PU_PV
+    
+    return round((angular_coef * vmax + linear_coef) * nominal_power_kw, 2)
+  
+  
 if __name__ == '__main__':
-  control_modes = ('vw', '')
+  
+  print(voltwatt_pv(v1=134.9, v2=0, v3=0, nominal_power_kw=24.0, limit_up_power=1.0))
+  exit()
+  control_modes = ('vw_default', 'vw_calculated')
   target_residences = (1, 4, 14, 20, 24)
   target_residence_ve = 24
   
